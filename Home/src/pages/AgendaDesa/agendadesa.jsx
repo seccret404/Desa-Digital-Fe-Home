@@ -12,7 +12,7 @@ export default function Home() {
 
       <div className="mt-4">
         <div className="bg-blue-500 text-white p-4 flex items-center justify-center">
-          <h1 className="font-bold text-xl">Agenda Desa</h1>
+          <h1 className="font-bold text-xl">Agenda Edu</h1>
         </div>
         <div className="ml-4">
           <h1 className="text-lg font-semibold mt-12 mb-4 text-left text-blue-600 text-3xl">Agenda</h1>
