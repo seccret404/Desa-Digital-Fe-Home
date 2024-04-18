@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import AgendaDesa from "./pages/AgendaDesa/agendadesa.jsx";
 import AgendaDesa2 from "./pages/AgendaDesa/agendadesa2.jsx";
 import AgendaDesa3 from "./pages/AgendaDesa/agendadesa3.jsx"; // Impor komponen AgendaDesa3
 import AgendaDesa4 from "./pages/AgendaDesa/agendadesa4.jsx"; // Impor komponen AgendaDesa4
