@@ -3,13 +3,14 @@ import AgendaDesa from "./pages/AgendaDesa/agendadesa.jsx";
 import AgendaDesa2 from "./pages/AgendaDesa/agendadesa2.jsx";
 import AgendaDesa3 from "./pages/AgendaDesa/agendadesa3.jsx"; // Impor komponen AgendaDesa3
 import AgendaDesa4 from "./pages/AgendaDesa/agendadesa4.jsx"; // Impor komponen AgendaDesa4
+import Home from "./pages/home/index.jsx";
 
 export default function App() {
   return (
     <Router>
       <Routes>
         {/* Route untuk AgendaDesa */}
-        <Route path="/" element={<AgendaDesa />} />
+        <Route path="/" element={<Home />} />
         
         {/* Route untuk AgendaDesa2 */}
         <Route path="/agendadesa2" element={<AgendaDesa2 />} />
