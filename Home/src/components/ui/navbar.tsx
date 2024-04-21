@@ -58,7 +58,7 @@ export default function Navbar() {
                     </div>
                </div>
                <div className="flex flex-wrap bg-[#ffffff] items-center justify-center  text-[12px] z-[9] text-[#0369A1]  border-b-2 border-blue-600 ">
-                    <div className="md:flex p-4 flex justify-center items-center md:items w-full ">
+                    <div className="md:flex p-2 flex justify-center items-center md:items w-full ">
                          <div className="flex mb-2 md:mr-20  items-center justify-between align-items-start ">
 
                               <div className="md:hidden flex mt-5  justify-end self-end " style={{ alignSelf: 'flex-start' }}>
@@ -77,12 +77,27 @@ export default function Navbar() {
                                    }`}>
                                    <Menubar>
                                         <MenubarMenu>
-                                             <MenubarTrigger className='flex'>Beranda </MenubarTrigger>
+                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Beranda </MenubarTrigger>
                                         </MenubarMenu>
                                    </Menubar>
                                    <Menubar>
                                         <MenubarMenu>
-                                             <MenubarTrigger className='flex'>Informasi Publik <ArrowBottomIcon /> </MenubarTrigger>
+                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Informasi Publik <ArrowBottomIcon /> </MenubarTrigger>
+                                             <MenubarContent className='bg-[#0369A1] bg-opacity-80  text-white rounded-[5px] p-2 w-[140px] text-start'>
+                                                  <MenubarItem>
+                                                       Menu1
+                                                  </MenubarItem>
+                                                  <MenubarItem>New Window</MenubarItem>
+                                                  <MenubarSeparator />
+                                                  <MenubarItem>Share</MenubarItem>
+                                                  <MenubarSeparator />
+                                                  <MenubarItem>Print</MenubarItem>
+                                             </MenubarContent>
+                                        </MenubarMenu>
+                                   </Menubar>
+                                   <Menubar>
+                                        <MenubarMenu>
+                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Profil Desa <ArrowBottomIcon /> </MenubarTrigger>
                                              <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start'>
                                                   <MenubarItem>
                                                        Menu1
@@ -97,7 +112,7 @@ export default function Navbar() {
                                    </Menubar>
                                    <Menubar>
                                         <MenubarMenu>
-                                             <MenubarTrigger className='flex'>Profil Desa <ArrowBottomIcon /> </MenubarTrigger>
+                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Pemerintahan<ArrowBottomIcon /> </MenubarTrigger>
                                              <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start'>
                                                   <MenubarItem>
                                                        Menu1
@@ -112,7 +127,7 @@ export default function Navbar() {
                                    </Menubar>
                                    <Menubar>
                                         <MenubarMenu>
-                                             <MenubarTrigger className='flex'>Pemerintahan<ArrowBottomIcon /> </MenubarTrigger>
+                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Data Desa <ArrowBottomIcon /> </MenubarTrigger>
                                              <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start'>
                                                   <MenubarItem>
                                                        Menu1
@@ -127,7 +142,7 @@ export default function Navbar() {
                                    </Menubar>
                                    <Menubar>
                                         <MenubarMenu>
-                                             <MenubarTrigger className='flex'>Data Desa <ArrowBottomIcon /> </MenubarTrigger>
+                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Organisasi Desa<ArrowBottomIcon /> </MenubarTrigger>
                                              <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start'>
                                                   <MenubarItem>
                                                        Menu1
@@ -140,22 +155,7 @@ export default function Navbar() {
                                              </MenubarContent>
                                         </MenubarMenu>
                                    </Menubar>
-                                   <Menubar>
-                                        <MenubarMenu>
-                                             <MenubarTrigger className='flex'>Organisasi Desa<ArrowBottomIcon /> </MenubarTrigger>
-                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start'>
-                                                  <MenubarItem>
-                                                       Menu1
-                                                  </MenubarItem>
-                                                  <MenubarItem>New Window</MenubarItem>
-                                                  <MenubarSeparator />
-                                                  <MenubarItem>Share</MenubarItem>
-                                                  <MenubarSeparator />
-                                                  <MenubarItem>Print</MenubarItem>
-                                             </MenubarContent>
-                                        </MenubarMenu>
-                                   </Menubar>
-                                   <div className="mb-4">
+                                   <div className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>
                                         <Link to={''}>
                                              Potensi desa
                                         </Link>
