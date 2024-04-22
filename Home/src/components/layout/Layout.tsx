@@ -11,9 +11,9 @@ export default function Layout({
   
   return (
    <>
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full ">
       <Navbar/>
-      <div className="h-screen">{children}</div>
+      <div className="">{children}</div>
       <Footer/>
     </div>
    </>
