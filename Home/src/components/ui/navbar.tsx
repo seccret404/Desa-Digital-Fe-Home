@@ -76,7 +76,7 @@ export default function Navbar() {
                                    }`}>
                                    <Menubar>
                                         <MenubarMenu>
-                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Beranda </MenubarTrigger>
+                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'><Link to='/'>Beranda</Link> </MenubarTrigger>
                                         </MenubarMenu>
                                    </Menubar>
                                    <Menubar>
