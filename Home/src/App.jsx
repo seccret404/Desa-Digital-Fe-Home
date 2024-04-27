@@ -4,6 +4,7 @@ import ProfilPage from "./pages/profil/index.jsx";
 import AgendaPage from "./pages/agenda/index.jsx";
 import DetailAgenda from "./pages/agenda/detail.jsx";
 import LaporanAgenda from "./pages/agenda/laporan.jsx";
+import OrganisasiPage from "./pages/organisasi/index.jsx";
 export default function App() {
   return (
     <Router>
@@ -11,6 +12,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/profil" element={<ProfilPage/>} />
         <Route path="/agenda" element={<AgendaPage/>} />
+        <Route path="/organisasi" element={<OrganisasiPage/>} />
         <Route path="/agenda-detail" element={<DetailAgenda/>} />
         <Route path="/agenda-detail-laporan" element={<LaporanAgenda/>} />
       </Routes>
