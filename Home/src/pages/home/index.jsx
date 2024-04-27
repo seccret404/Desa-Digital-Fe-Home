@@ -24,7 +24,7 @@ export default function Home() {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    width: 290,
+
     captionWidth: 300,
 
   };
@@ -39,15 +39,15 @@ export default function Home() {
               <div className="container p-4">
                 <Slider {...settings}>
                   <div className="pl-4 pr-4">
-                    <img src={slide} width={350} alt="Credit to Joshua Earle on Unsplash" />
+                    <img src={slide}  alt="Credit to Joshua Earle on Unsplash" className="w-full"/>
                     <div className="text-center bg-[#E9871D]  text-white p-1 ">Caption untuk gambar 1</div>
                   </div>
                   <div className="pl-4 pr-4">
-                    <img src={slide} width={350} alt="Credit to Joshua Earle on Unsplash" />
+                    <img src={slide}  alt="Credit to Joshua Earle on Unsplash" className="w-full" />
                     <div className="text-center bg-[#E9871D]  text-white p-1 ">Caption untuk gambar 1</div>
                   </div>
                   <div className="pl-4 pr-4">
-                    <img src={slide} width={350} alt="Credit to Joshua Earle on Unsplash" />
+                    <img src={slide}  alt="Credit to Joshua Earle on Unsplash" className="w-full" />
                     <div className="text-center bg-[#E9871D]  text-white p-1 ">Caption untuk gambar 1</div>
                   </div>
                 </Slider>
