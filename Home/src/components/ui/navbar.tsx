@@ -82,7 +82,7 @@ export default function Navbar() {
                                    <Menubar>
                                         <MenubarMenu>
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Informasi Publik <ArrowBottomIcon /> </MenubarTrigger>
-                                             <MenubarContent className='bg-[#0369A1] bg-opacity-80  text-white rounded-[5px] p-2 w-[140px] text-start'>
+                                             <MenubarContent className='bg-[#0369A1] bg-opacity-80  text-white rounded-[5px] p-2 w-[140px] text-start ' style={{ zIndex: 50 }}>
                                                   <MenubarItem>
                                                        Menu1
                                                   </MenubarItem>
@@ -97,7 +97,7 @@ export default function Navbar() {
                                    <Menubar>
                                         <MenubarMenu>
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Profil Desa <ArrowBottomIcon /> </MenubarTrigger>
-                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start'>
+                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start' style={{ zIndex: 50 }}>
                                                   <MenubarItem>
                                                        Menu1
                                                   </MenubarItem>
@@ -112,7 +112,7 @@ export default function Navbar() {
                                    <Menubar>
                                         <MenubarMenu>
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Pemerintahan<ArrowBottomIcon /> </MenubarTrigger>
-                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start'>
+                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start' style={{ zIndex: 50 }}>
                                                   <MenubarItem>
                                                        Menu1
                                                   </MenubarItem>
@@ -127,7 +127,7 @@ export default function Navbar() {
                                    <Menubar>
                                         <MenubarMenu>
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Data Desa <ArrowBottomIcon /> </MenubarTrigger>
-                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start'>
+                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start' style={{ zIndex: 50 }}>
                                                   <MenubarItem>
                                                        Menu1
                                                   </MenubarItem>
@@ -142,7 +142,7 @@ export default function Navbar() {
                                    <Menubar>
                                         <MenubarMenu>
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Organisasi Desa<ArrowBottomIcon /> </MenubarTrigger>
-                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start'>
+                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start' style={{ zIndex: 50 }}>
                                                   <MenubarItem>
                                                        Menu1
                                                   </MenubarItem>
@@ -154,7 +154,7 @@ export default function Navbar() {
                                              </MenubarContent>
                                         </MenubarMenu>
                                    </Menubar>
-                                   <div className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>
+                                   <div className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300' style={{ zIndex: 50 }}>
                                         <Link to={''}>
                                              Potensi desa
                                         </Link>
