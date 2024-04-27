@@ -83,14 +83,13 @@ export default function Navbar() {
                                         <MenubarMenu>
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Informasi Publik <ArrowBottomIcon /> </MenubarTrigger>
                                              <MenubarContent className='bg-[#0369A1] bg-opacity-80  text-white rounded-[5px] p-2 w-[140px] text-start ' style={{ zIndex: 50 }}>
-                                                  <MenubarItem>
-                                                       Menu1
-                                                  </MenubarItem>
-                                                  <MenubarItem>New Window</MenubarItem>
+                                                   <MenubarItem><Link to='/' className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Berita Desa</Link></MenubarItem>
+                                           
+                                                  <MenubarItem><Link to='/' className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Pengumuman </Link></MenubarItem>
                                                   <MenubarSeparator />
-                                                  <MenubarItem>Share</MenubarItem>
+                                                  <MenubarItem><Link to='/agenda' className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Agenda Desa</Link></MenubarItem>
                                                   <MenubarSeparator />
-                                                  <MenubarItem>Print</MenubarItem>
+                                                   
                                              </MenubarContent>
                                         </MenubarMenu>
                                    </Menubar>
