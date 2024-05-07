@@ -57,7 +57,7 @@ export default function Navbar() {
                     </div>
                </div>
                <div className="flex flex-wrap bg-[#ffffff] items-center justify-center  text-[12px] z-[9] text-[#0369A1]  border-b-2 border-blue-600 ">
-                    <div className="md:flex p-2 flex justify-center items-center md:items w-full ">
+                    <div className="md:flex flex w-full ">
                          <div className="flex mb-2 md:mr-20  items-center justify-between align-items-start ">
 
                               <div className="md:hidden flex mt-5  justify-end self-end " style={{ alignSelf: 'flex-start' }}>
@@ -71,8 +71,8 @@ export default function Navbar() {
                                    </button>
                               </div>
                          </div>
-                         <div className="flex justify-center mb-4 items-center">
-                              <div className={`flex flex-col items-center justify-center gap-5  md:text-right font-normal text-[15px] md:flex md:items-center space-x-0 md:space-x-12 space-y-2 w-full  md:pt-0 md:flex-row ${navbar ? "flex" : "hidden"
+                         <div className="flex justify-center mb-2 mt-2 items-center">
+                              <div className={`flex flex-col items-center justify-center gap-4  md:text-right font-normal text-[15px] md:flex md:items-center space-x-0 md:space-x-12  w-full  md:pt-0 md:flex-row ${navbar ? "flex" : "hidden"
                                    }`}>
                                    <Menubar>
                                         <MenubarMenu>
@@ -95,64 +95,41 @@ export default function Navbar() {
                                    </Menubar>
                                    <Menubar>
                                         <MenubarMenu>
-                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Profil Desa <ArrowBottomIcon /> </MenubarTrigger>
-                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start' style={{ zIndex: 50 }}>
+                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Pemerintahan Desa <ArrowBottomIcon /> </MenubarTrigger>
+                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[180px] text-start' style={{ zIndex: 50 }}>
                                                   <MenubarItem>
-                                                       Menu1
+                                                      <Link  to={'/profil'}>Profil Desa</Link>
                                                   </MenubarItem>
-                                                  <MenubarItem>New Window</MenubarItem>
+                                                  <MenubarItem>Struktur Pemerintahan</MenubarItem>
                                                   <MenubarSeparator />
-                                                  <MenubarItem>Share</MenubarItem>
-                                                  <MenubarSeparator />
-                                                  <MenubarItem>Print</MenubarItem>
+                                                  <MenubarItem>Tugas Dan Wewenang</MenubarItem>
+                                                  
                                              </MenubarContent>
                                         </MenubarMenu>
                                    </Menubar>
                                    <Menubar>
                                         <MenubarMenu>
-                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Pemerintahan<ArrowBottomIcon /> </MenubarTrigger>
-                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start' style={{ zIndex: 50 }}>
-                                                  <MenubarItem>
-                                                       Menu1
-                                                  </MenubarItem>
-                                                  <MenubarItem>New Window</MenubarItem>
-                                                  <MenubarSeparator />
-                                                  <MenubarItem>Share</MenubarItem>
-                                                  <MenubarSeparator />
-                                                  <MenubarItem>Print</MenubarItem>
+                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>APBDes<ArrowBottomIcon /> </MenubarTrigger>
+                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 text-start' style={{ zIndex: 50 }}>
+                                                  <MenubarItem> APBDes Tahun 2021</MenubarItem>
+                                                  <MenubarItem> APBDes Tahun 2022</MenubarItem>
+                                                  <MenubarItem> APBDes Tahun 2023</MenubarItem>
+                                                 
                                              </MenubarContent>
                                         </MenubarMenu>
                                    </Menubar>
-                                   <Menubar>
-                                        <MenubarMenu>
-                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Data Desa <ArrowBottomIcon /> </MenubarTrigger>
-                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start' style={{ zIndex: 50 }}>
-                                                  <MenubarItem>
-                                                       Menu1
-                                                  </MenubarItem>
-                                                  <MenubarItem>New Window</MenubarItem>
-                                                  <MenubarSeparator />
-                                                  <MenubarItem>Share</MenubarItem>
-                                                  <MenubarSeparator />
-                                                  <MenubarItem>Print</MenubarItem>
-                                             </MenubarContent>
-                                        </MenubarMenu>
-                                   </Menubar>
-                                   <Menubar>
-                                        <MenubarMenu>
-                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Organisasi Desa<ArrowBottomIcon /> </MenubarTrigger>
-                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[140px] text-start' style={{ zIndex: 50 }}>
-                                                  <MenubarItem>
-                                                       Menu1
-                                                  </MenubarItem>
-                                                  <MenubarItem>New Window</MenubarItem>
-                                                  <MenubarSeparator />
-                                                  <MenubarItem>Share</MenubarItem>
-                                                  <MenubarSeparator />
-                                                  <MenubarItem>Print</MenubarItem>
-                                             </MenubarContent>
-                                        </MenubarMenu>
-                                   </Menubar>
+                                   <div className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300' style={{ zIndex: 50 }}>
+                                        <Link to={''}>
+                                            Bantuan Desa
+                                        </Link>
+                                   </div>
+                                   <div className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300' style={{ zIndex: 50 }}>
+                                        <Link to={'/organisasi'}>
+                                            Organisasi Desa
+                                        </Link>
+                                   </div>
+
+                                  
                                    <div className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300' style={{ zIndex: 50 }}>
                                         <Link to={''}>
                                              Potensi desa

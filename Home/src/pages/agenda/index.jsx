@@ -32,6 +32,7 @@ export default function AgendaPage() {
                          </div>
                          <div className="flex justify-center items-center">
                               <div className="grid grid-cols-2 gap-8">
+                                   <a href="/agenda-detail">
                                    <div className="bg-[#0369A1] shadow w-[499px] mt-8 text-white" > {/*card*/}
                                         <div className="p-2">
                                              <div className="ml-2">
@@ -46,6 +47,7 @@ export default function AgendaPage() {
                                              </div>
                                         </div>
                                    </div>
+                                   </a>
                                    <div className="bg-[#0369A1] shadow w-[499px] mt-8 text-white" > {/*card*/}
                                         <div className="p-2">
                                              <div className="ml-2">

@@ -14,7 +14,7 @@ export default function DetailAgenda() {
                          </div>
                          <div className="mt-4">
                               <Button bgColor='#0D9276' width={192} height={33} rounded={5} color='white'>
-                                   Lihat Laporan
+                                   <a href="/agenda-detail-laporan">Lihat Laporan</a>
                               </Button>
                          </div>
                          <div className="text-[18px] font-medium mt-4">Tujuan :</div>
