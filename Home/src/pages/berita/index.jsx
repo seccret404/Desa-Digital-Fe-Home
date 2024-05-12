@@ -3,6 +3,7 @@ import Layout from "../../components/layout/Layout";
 import SearchIcon from "../../components/icon/searchIcon";
 import CalenderICon from "../../components/icon/calenderIcon";
 import rapat from '../../assets/rapat.png'
+import { Link } from "react-router-dom";
 
 export default function BeritaPage() {
      const [searchText, setSearchText] = useState('');
@@ -37,7 +38,7 @@ export default function BeritaPage() {
                          <div className="font-bold text-[20px]">Daftar Berita</div>
                          <div className="flex justify-between mt-4">
                               <div className="grid grid-cols-1  ">
-                                   <a href="/berita-detail">
+                                  <Link to={'/berita-detail'}>
                                    <div className="bg-white shadow w-[499px] mt-2">
                                         <div className="flex p-2">
                                              <img src={rapat} alt="" width={139} height={118} />
@@ -53,7 +54,9 @@ export default function BeritaPage() {
                                              </div>
                                         </div>
                                    </div>
-                                   </a>
+                                  </Link>
+                                  
+                                  
                                    <div className="bg-white shadow w-[499px] mt-2">
                                         <div className="flex p-2">
                                              <img src={rapat} alt="" width={139} height={118} />
