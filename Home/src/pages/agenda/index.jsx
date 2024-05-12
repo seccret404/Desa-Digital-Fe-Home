@@ -2,6 +2,7 @@ import SearchIcon from "../../components/icon/searchIcon";
 import Layout from "../../components/layout/Layout";
 import CalenderICon from "../../components/icon/calenderIcon";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 export default function AgendaPage() {
      const [searchText, setSearchText] = useState('');
      const handleChange = (event) => {
@@ -32,8 +33,8 @@ export default function AgendaPage() {
                          </div>
                          <div className="flex justify-center items-center">
                               <div className="grid grid-cols-2 gap-8">
-                                   <a href="/agenda-detail">
-                                   <div className="bg-[#0369A1] shadow w-[499px] mt-8 text-white" > {/*card*/}
+                                  <Link to={'/agenda-detail'}>
+                                    <div className="bg-[#0369A1] shadow w-[499px] mt-8 text-white" > {/*card*/}
                                         <div className="p-2">
                                              <div className="ml-2">
                                                   <div className="text-[18px] font-medium text-white">Penyerahan Penerima Banuan Sosial</div>
@@ -47,7 +48,8 @@ export default function AgendaPage() {
                                              </div>
                                         </div>
                                    </div>
-                                   </a>
+                                  </Link>
+                               
                                    <div className="bg-[#0369A1] shadow w-[499px] mt-8 text-white" > {/*card*/}
                                         <div className="p-2">
                                              <div className="ml-2">

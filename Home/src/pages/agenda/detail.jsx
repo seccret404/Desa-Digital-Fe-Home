@@ -1,6 +1,7 @@
 import Layout from '../../components/layout/Layout'
 import CalenderICon from '../../components/icon/calenderIcon'
 import Button from '../../components/ui/button'
+import { Link } from 'react-router-dom'
 export default function DetailAgenda() {
      return (
           <div className="bg-[#F8F2F2]">
@@ -14,7 +15,7 @@ export default function DetailAgenda() {
                          </div>
                          <div className="mt-4">
                               <Button bgColor='#0D9276' width={192} height={33} rounded={5} color='white'>
-                                   <a href="/agenda-detail-laporan">Lihat Laporan</a>
+                                  <Link to={'/agenda-detail-laporan'}>Lihat Laporan</Link>
                               </Button>
                          </div>
                          <div className="text-[18px] font-medium mt-4">Tujuan :</div>
