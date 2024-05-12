@@ -13,7 +13,6 @@ import {
 } from '@radix-ui/react-menubar';
 import ArrowBottomIcon from '../icon/arrowBottom';
 
-
 export default function Navbar() {
      const [navbar, setNavbar] = useState(false);
      const [date, setDate] = useState(new Date());
@@ -31,7 +30,7 @@ export default function Navbar() {
      }
 
      const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+     const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
      const dayName = days[date.getDay()];
      const monthName = months[date.getMonth()];
@@ -83,11 +82,12 @@ export default function Navbar() {
                                         <MenubarMenu>
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Informasi Publik <ArrowBottomIcon /> </MenubarTrigger>
                                              <MenubarContent className='bg-[#0369A1] bg-opacity-80  text-white rounded-[5px] p-2 w-[140px] text-start ' style={{ zIndex: 50 }}>
-                                                   <MenubarItem><Link to='/' className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Berita Desa</Link></MenubarItem>
+                                                   <MenubarItem><Link to='/berita' className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Berita Desa</Link></MenubarItem>
                                            
-                                                  <MenubarItem><Link to='/' className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Pengumuman </Link></MenubarItem>
+                                                  <MenubarItem><Link to='/pengumuman' className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Pengumuman </Link></MenubarItem>
                                                   <MenubarSeparator />
                                                   <MenubarItem><Link to='/agenda' className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Agenda Desa</Link></MenubarItem>
+                                                  <MenubarItem><Link to='/bantuan' className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Bantuan Desa</Link></MenubarItem>
                                                   <MenubarSeparator />
                                                    
                                              </MenubarContent>
@@ -118,11 +118,17 @@ export default function Navbar() {
                                              </MenubarContent>
                                         </MenubarMenu>
                                    </Menubar>
-                                   <div className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300' style={{ zIndex: 50 }}>
-                                        <Link to={''}>
-                                            Bantuan Desa
-                                        </Link>
-                                   </div>
+                                   <Menubar>
+                                        <MenubarMenu>
+                                             <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Data Statistik<ArrowBottomIcon /> </MenubarTrigger>
+                                             <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 text-start' style={{ zIndex: 50 }}>
+                                                  <MenubarItem></MenubarItem>
+                                                  <MenubarItem> </MenubarItem>
+                                                  <MenubarItem> </MenubarItem>
+                                                 
+                                             </MenubarContent>
+                                        </MenubarMenu>
+                                   </Menubar>
                                    <div className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300' style={{ zIndex: 50 }}>
                                         <Link to={'/organisasi'}>
                                             Organisasi Desa

@@ -36,6 +36,7 @@ export default function OrganisasiPage() {
                          <div className="font-bold text-[20px]">Daftar Organisasi</div>
                          <div className="flex justify-between mt-4">
                               <div className="grid grid-cols-3 gap-5 mr-[50px]">
+                                   <a href="/organisasi-detail">
                                    <div className="bg-[#0369A1] text-white flex flex-col shadow-lg ">
                                         <div className="flex justify-center"><img src={organisasi} alt="" /></div>
                                         <div className="text-center p-10">Pemberdayaan Kesejahteraan Keluarga</div>
@@ -48,6 +49,7 @@ export default function OrganisasiPage() {
                                              <div className="bg-white w-[25px]"></div>
                                         </div>
                                    </div>
+                                   </a>
                                    <div className="bg-[#0369A1] text-white flex flex-col shadow-lg">
                                         <div className="flex justify-center"><img src={organisasi} alt="" /></div>
                                         <div className="text-center p-10">Pemberdayaan Kesejahteraan Keluarga</div>
