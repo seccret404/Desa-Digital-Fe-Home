@@ -3,14 +3,13 @@ import Layout from "../../components/layout/Layout";
 import SearchIcon from "../../components/icon/searchIcon";
 import CalenderICon from "../../components/icon/calenderIcon";
 import organisasi from '../../assets/organisasi.png'
+import { Link } from "react-router-dom";
 export default function OrganisasiPage() {
      const [searchText, setSearchText] = useState('');
      const handleChange = (event) => {
           setSearchText(event.target.value);
      };
      return (
-
-
           <div className="bg-[#F8F2F2]">
                <Layout>
                     <div className="bg-white mt-4 mb-4 ml-[56px] mr-[56px] rounded-[10px] p-6">
@@ -36,8 +35,8 @@ export default function OrganisasiPage() {
                          <div className="font-bold text-[20px]">Daftar Organisasi</div>
                          <div className="flex justify-between mt-4">
                               <div className="grid grid-cols-3 gap-5 mr-[50px]">
-                                   <a href="/organisasi-detail">
-                                   <div className="bg-[#0369A1] text-white flex flex-col shadow-lg ">
+                                <Link to={'/agenda-detail'}>
+                                <div className="bg-[#0369A1] text-white flex flex-col shadow-lg ">
                                         <div className="flex justify-center"><img src={organisasi} alt="" /></div>
                                         <div className="text-center p-10">Pemberdayaan Kesejahteraan Keluarga</div>
                                         <div className="flex justify-between">
@@ -49,7 +48,9 @@ export default function OrganisasiPage() {
                                              <div className="bg-white w-[25px]"></div>
                                         </div>
                                    </div>
-                                   </a>
+                                </Link>
+                                   
+                              
                                    <div className="bg-[#0369A1] text-white flex flex-col shadow-lg">
                                         <div className="flex justify-center"><img src={organisasi} alt="" /></div>
                                         <div className="text-center p-10">Pemberdayaan Kesejahteraan Keluarga</div>
