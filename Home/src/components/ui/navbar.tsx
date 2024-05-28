@@ -12,11 +12,25 @@ import {
      MenubarTrigger,
 } from '@radix-ui/react-menubar';
 import ArrowBottomIcon from '../icon/arrowBottom';
+import { Anggaran } from '../../interfaces/anggaran';
+import { getAnggaran } from '../../services/desaServices';
 
 export default function Navbar() {
      const [navbar, setNavbar] = useState(false);
      const [date, setDate] = useState(new Date());
+     const [anggaran, setAnggaran] = useState<Anggaran[]>([]);
 
+     useEffect(() =>{
+          async function fetchAnggaran(){
+               try{
+                    const data  = await getAnggaran();
+                    setAnggaran(data)
+               }catch(error){
+                    console.log('gagar munulkan')
+               }
+          }
+          fetchAnggaran();
+     },[])
      useEffect(() => {
           const timerID = setInterval(() => tick(), 1000);
 
@@ -98,23 +112,35 @@ export default function Navbar() {
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Pemerintahan Desa <ArrowBottomIcon /> </MenubarTrigger>
                                              <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 w-[180px] text-start' style={{ zIndex: 50 }}>
                                                   <MenubarItem>
-                                                      <Link  to={'/profil'}>Profil Desa</Link>
+                                                      <Link  to={'/profil'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Profil Desa</Link>
                                                   </MenubarItem>
-                                                  <MenubarItem>Struktur Pemerintahan</MenubarItem>
+                                                  <MenubarItem>
+                                                       <Link to={'/pemerintahan'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>
+                                                       Struktur Pemerintahan
+                                                       </Link>
+                                                       </MenubarItem>
                                                   <MenubarSeparator />
-                                                  <MenubarItem>Tugas Dan Wewenang</MenubarItem>
+                                                  <MenubarItem>
+                                                       <Link to={'/tugas'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>
+                                                       Tugas Dan Wewenang
+                                                       </Link>
+                                                  </MenubarItem>
                                                   
                                              </MenubarContent>
                                         </MenubarMenu>
                                    </Menubar>
+
                                    <Menubar>
                                         <MenubarMenu>
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>APBDes<ArrowBottomIcon /> </MenubarTrigger>
                                              <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 text-start' style={{ zIndex: 50 }}>
-                                                  <MenubarItem> APBDes Tahun 2021</MenubarItem>
-                                                  <MenubarItem> APBDes Tahun 2022</MenubarItem>
-                                                  <MenubarItem> APBDes Tahun 2023</MenubarItem>
-                                                 
+                                                  {anggaran.map((item,index) =>
+                                                  <MenubarItem>
+                                                       <Link to={`/apbdes/${item.id}`} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>
+                                                       APBDes {item.tahun_anggaran}
+                                                       </Link>
+                                                  </MenubarItem>
+                                                  )}
                                              </MenubarContent>
                                         </MenubarMenu>
                                    </Menubar>
@@ -122,10 +148,7 @@ export default function Navbar() {
                                         <MenubarMenu>
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Data Statistik<ArrowBottomIcon /> </MenubarTrigger>
                                              <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 text-start' style={{ zIndex: 50 }}>
-                                                  <MenubarItem></MenubarItem>
-                                                  <MenubarItem> </MenubarItem>
-                                                  <MenubarItem> </MenubarItem>
-                                                 
+                                                  <MenubarItem><Link to={'/pendidikan'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Statistik Pendidikan</Link></MenubarItem>
                                              </MenubarContent>
                                         </MenubarMenu>
                                    </Menubar>
