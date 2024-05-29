@@ -1,38 +1,62 @@
-import React, { useEffect, useState } from 'react'
-import Layout from '../../components/layout/Layout'
-import { Profil } from '../../interfaces/profil'
-import { getProfil } from '../../services/desaServices';
+import React, { useEffect, useState } from 'react';
+import Layout from '../../components/layout/Layout';
+import { Profil } from '../../interfaces/profil';
+import { getProfil, getPenerimaBantuan, getPenduduk } from '../../services/desaServices';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table';
+import { Penerima } from '../../interfaces/penerimaBantuan';
+import { PendudukDesa } from '../../interfaces/penduduk';
 
 export default function BantuanPage() {
   const [profil, setProfil] = useState<Profil | null>(null);
+  const [penerimaBantuan, setPenerimaBantuan] = useState<Penerima[]>([]);
+  const [pendudukData, setPendudukData] = useState<PendudukDesa[]>([]);
   const currentYear = new Date().getFullYear();
+
   useEffect(() => {
-    async function fetchProfil() {
+    async function fetchData() {
       try {
-        const data = await getProfil();
-        setProfil(data[0])
+        const profilData = await getProfil();
+        setProfil(profilData[0]);
+        const penerimaBantuanData = await getPenerimaBantuan();
+        setPenerimaBantuan(penerimaBantuanData);
+        const pendudukData = await getPenduduk(); 
+        setPendudukData(pendudukData);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     }
-    fetchProfil();
-  }, [])
+    fetchData();
+  }, []);
 
-  const data = [
-    { name: 'BPJS', value: 10 },
-    { name: 'BPNT', value: 15 },
-    { name: 'PKH', value: 20 },
-  ];
+  const filterByJenisBantuan = (jenis: string) => {
+    return penerimaBantuan.filter(penerima => penerima.jenis_bantuan === jenis);
+  };
 
-  const dataDesa = [
-     { name: 'BPJS', value: 10 },
-     { name: 'BPNT', value: 15 },
-     { name: 'PKH', value: 20 },
-   ];
- 
-   const COLORS = ['#0369A1', '#1D6FE9', '#E9871D'];
+  const countByJenisKelamin = (data: Penerima[], jenisKelamin: string) => {
+    const pendudukByJenisKelamin = pendudukData.filter(penduduk => penduduk.jenis_kelamin === jenisKelamin);
+    return data.filter(penerima => pendudukByJenisKelamin.some(penduduk => penduduk.id === penerima.id_penduduk)).length;
+  };
+
+  const dataPemerintah = filterByJenisBantuan('Pemerintah').map(item => ({ name: item.nama_bantuan, value: countByJenisKelamin(filterByJenisBantuan('Pemerintah'), 'Laki-laki') + countByJenisKelamin(filterByJenisBantuan('Pemerintah'), 'Perempuan') }));
+  const gatherDataDesa = () => {
+    const filteredData = filterByJenisBantuan('Desa');
+    const uniqueBantuans: { [key: string]: number } = {};
+
+    filteredData.forEach(item => {
+      if (!uniqueBantuans[item.nama_bantuan]) {
+        uniqueBantuans[item.nama_bantuan] = countByJenisKelamin(filteredData, 'Laki-laki') + countByJenisKelamin(filteredData, 'Perempuan');
+      }
+    });
+
+    return Object.keys(uniqueBantuans).map(name => ({ name, value: uniqueBantuans[name] }));
+  };
+
+  const dataDesa = gatherDataDesa();
+
+
+  const COLORS = ['#0369A1', '#1D6FE9', '#E9871D'];
+
   return (
     <div className="bg-[#F8F2F2]">
       <Layout>
@@ -43,14 +67,14 @@ export default function BantuanPage() {
               Data Statistik Penerima Bantuan {profil?.nama_desa} - {currentYear}
             </div>
           </div>
-          <div className="flex  justify-between ml-[100px] mr-[100px] mt-8">
-            <div className="">
+          <div className="flex justify-between ml-[100px] mr-[100px] mt-8">
+            <div>
               <div className="bg-[#E9871D] w-[200px] rounded-[7px] mt-4 ml-[50px]">
                 <div className="text-white text-center p-2"> Data Diagram</div>
               </div>
               <PieChart width={400} height={300} margin={{ top: 20, right: 0, left: -40, bottom: 5 }}>
                 <Pie
-                  data={data}
+                  data={dataPemerintah}
                   cx={200}
                   cy={100}
                   labelLine={false}
@@ -58,7 +82,7 @@ export default function BantuanPage() {
                   fill="#8884d8"
                   dataKey="value"
                 >
-                  {data.map((entry, index) => (
+                  {dataPemerintah.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
@@ -66,46 +90,30 @@ export default function BantuanPage() {
                 <Legend layout="vertical" align="right" verticalAlign="top" wrapperStyle={{ marginLeft: 30 }} />
               </PieChart>
             </div>
-            <div className="">
+            <div>
               <div className="bg-[#0369A1] w-[200px] rounded-[7px] mt-4 mb-3 items-none">
                 <div className="text-white text-center p-2"> Data Table</div>
               </div>
               <Table className='border border-2 border-[#525252] w-[450px]' style={{ borderRadius: '5px' }}>
-                <TableHeader className='text-black bg-[#FFFFFF] text-center' style={{
-                  borderBottom: '#5D5D5E solid',
-                }}>
+                <TableHeader className='text-black bg-[#FFFFFF] text-center' style={{ borderBottom: '#5D5D5E solid' }}>
                   <TableHead >Bantuan</TableHead>
                   <TableHead className='text-center'>Laki-laki</TableHead>
                   <TableHead className='text-center'>Perempuan</TableHead>
-
                 </TableHeader>
                 <TableBody>
-                  <TableRow >
-                    <TableCell >BPJS</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                  <TableRow >
-                    <TableCell>BPNT</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                  <TableRow >
-                    <TableCell>PKH</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
+                  {dataPemerintah.map((item, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{item.name}</TableCell>
+                      <TableCell className='text-center'>{countByJenisKelamin(filterByJenisBantuan('Pemerintah'), 'Laki-laki')}</TableCell>
+                      <TableCell className='text-center'>{countByJenisKelamin(filterByJenisBantuan('Pemerintah'), 'Perempuan')}</TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </div>
           </div>
-          <div className="flex justify-center">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-900 w-[300px] p-3 rounded-[5px] text-white text-center">
-              Data Statistik Penerima Bantuan {profil?.nama_desa} - {currentYear}
-            </div>
-          </div>
-          <div className="flex  justify-between ml-[100px] mr-[100px] mt-8">
-            <div className="">
+          <div className="flex justify-between ml-[100px] mr-[100px] mt-8">
+            <div>
               <div className="bg-[#E9871D] w-[200px] rounded-[7px] mt-4 ml-[50px]">
                 <div className="text-white text-center p-2"> Data Diagram</div>
               </div>
@@ -119,7 +127,7 @@ export default function BantuanPage() {
                   fill="#8884d8"
                   dataKey="value"
                 >
-                  {data.map((entry, index) => (
+                  {dataDesa.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
@@ -127,35 +135,24 @@ export default function BantuanPage() {
                 <Legend layout="vertical" align="right" verticalAlign="top" wrapperStyle={{ marginLeft: 30 }} />
               </PieChart>
             </div>
-            <div className="">
+            <div>
               <div className="bg-[#0369A1] w-[200px] rounded-[7px] mt-4 mb-3 items-none">
                 <div className="text-white text-center p-2"> Data Table</div>
               </div>
               <Table className='border border-2 border-[#525252] w-[450px]' style={{ borderRadius: '5px' }}>
-                <TableHeader className='text-black bg-[#FFFFFF] text-center' style={{
-                  borderBottom: '#5D5D5E solid',
-                }}>
+                <TableHeader className='text-black bg-[#FFFFFF] text-center' style={{ borderBottom: '#5D5D5E solid' }}>
                   <TableHead >Bantuan</TableHead>
                   <TableHead className='text-center'>Laki-laki</TableHead>
                   <TableHead className='text-center'>Perempuan</TableHead>
-
                 </TableHeader>
                 <TableBody>
-                  <TableRow >
-                    <TableCell >BPJS</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                  <TableRow >
-                    <TableCell>BPNT</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                  <TableRow >
-                    <TableCell>PKH</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
+                  {dataDesa.map((item, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{item.name}</TableCell>
+                      <TableCell className='text-center'>{countByJenisKelamin(filterByJenisBantuan('Desa'), 'Laki-laki')}</TableCell>
+                      <TableCell className='text-center'>{countByJenisKelamin(filterByJenisBantuan('Desa'), 'Perempuan')}</TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </div>
@@ -163,5 +160,5 @@ export default function BantuanPage() {
         </div>
       </Layout>
     </div>
-  )
+  );
 }

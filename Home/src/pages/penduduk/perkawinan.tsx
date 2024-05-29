@@ -1,43 +1,52 @@
-import React, { useEffect, useState } from 'react'
-import Layout from '../../components/layout/Layout'
-import { Profil } from '../../interfaces/profil'
-import { getProfil } from '../../services/desaServices';
+import React, { useEffect, useState } from 'react';
+import Layout from '../../components/layout/Layout';
+import { Profil } from '../../interfaces/profil';
+import { getProfil, getPenduduk } from '../../services/desaServices';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table';
+import { PendudukDesa } from '../../interfaces/penduduk';
 
 export default function PerkawinanPage() {
   const [profil, setProfil] = useState<Profil | null>(null);
+  const [penduduk, setPenduduk] = useState<PendudukDesa[]>([]);
   const currentYear = new Date().getFullYear();
+
   useEffect(() => {
-    async function fetchProfil() {
+    async function fetchData() {
       try {
-        const data = await getProfil();
-        setProfil(data[0])
+        const profilData = await getProfil();
+        setProfil(profilData[0]);
+        const pendudukData = await getPenduduk();
+        setPenduduk(pendudukData);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     }
-    fetchProfil();
-  }, [])
+    fetchData();
+  }, []);
 
   const data = [
-    { name: 'PNS', value: 10 },
-    { name: 'Petani', value: 15 },
-    { name: 'Wiraswasta', value: 20 },
+    { name: 'Belum Kawin', value: penduduk.filter(p => p.status_perkawinan === 'Belum Kawin').length },
+    { name: 'Kawin', value: penduduk.filter(p => p.status_perkawinan === 'Kawin').length },
+    { name: 'Cerai Hidup', value: penduduk.filter(p => p.status_perkawinan === 'Cerai Hidup').length },
+    { name: 'Cerai Mati', value: penduduk.filter(p => p.status_perkawinan === 'Cerai Mati').length },
   ];
 
-  const COLORS = ['#0369A1', '#1D6FE9', '#E9871D'];
+  const COLORS = ['#0369A1', '#1D6FE9', '#E9871D', '#F61414'];
+
   return (
     <div className="bg-[#F8F2F2]">
       <Layout>
-        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">Statistik Penduduk  - Perkawinan</div>
+        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">
+          Statistik Penduduk - Perkawinan
+        </div>
         <div className="bg-white p-4 rounded-[8px] ml-[56px] mr-[56px] mt-4">
           <div className="flex justify-center">
             <div className="bg-gradient-to-r from-blue-600 to-blue-900 w-[300px] p-3 rounded-[5px] text-white text-center">
-              Data Statistik Pendidikan Perwaninan {profil?.nama_desa} - {currentYear}
+              Data Statistik Perkawinan Penduduk {profil?.nama_desa} - {currentYear}
             </div>
           </div>
-          <div className="flex  justify-between ml-[100px] mr-[100px] mt-8">
+          <div className="flex justify-between ml-[100px] mr-[100px] mt-8">
             <div className="">
               <div className="bg-[#E9871D] w-[200px] rounded-[7px] mt-4 ml-[50px]">
                 <div className="text-white text-center p-2"> Data Diagram</div>
@@ -71,30 +80,19 @@ export default function PerkawinanPage() {
                   <TableHead >Perkawinan</TableHead>
                   <TableHead className='text-center'>Laki-laki</TableHead>
                   <TableHead className='text-center'>Perempuan</TableHead>
-
                 </TableHeader>
                 <TableBody>
-                  <TableRow >
-                    <TableCell >Belum Kawin</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                  <TableRow >
-                    <TableCell>Kawin</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                  <TableRow >
-                    <TableCell>Cerai Hidup</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                  <TableRow >
-                    <TableCell>Cerail Mati</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-
+                  {data.map((item, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{item.name}</TableCell>
+                      <TableCell className='text-center'>
+                        {penduduk.filter(p => p.status_perkawinan === item.name && p.jenis_kelamin === 'Laki-laki').length}
+                      </TableCell>
+                      <TableCell className='text-center'>
+                        {penduduk.filter(p => p.status_perkawinan === item.name && p.jenis_kelamin === 'Perempuan').length}
+                      </TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </div>
@@ -102,5 +100,5 @@ export default function PerkawinanPage() {
         </div>
       </Layout>
     </div>
-  )
+  );
 }

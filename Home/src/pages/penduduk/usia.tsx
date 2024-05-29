@@ -1,37 +1,61 @@
-import React, { useEffect, useState } from 'react'
-import Layout from '../../components/layout/Layout'
-import { Profil } from '../../interfaces/profil'
-import { getProfil } from '../../services/desaServices';
+import React, { useEffect, useState } from 'react';
+import Layout from '../../components/layout/Layout';
+import { Profil } from '../../interfaces/profil';
+import { getProfil, getPenduduk } from '../../services/desaServices';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table';
+import { PendudukDesa } from '../../interfaces/penduduk';
 
 export default function UsiaPage() {
   const [profil, setProfil] = useState<Profil | null>(null);
+  const [penduduk, setPenduduk] = useState<PendudukDesa[]>([]);
   const currentYear = new Date().getFullYear();
+
   useEffect(() => {
-    async function fetchProfil() {
+    async function fetchData() {
       try {
-        const data = await getProfil();
-        setProfil(data[0])
+        const profilData = await getProfil();
+        setProfil(profilData[0]);
+        const pendudukData = await getPenduduk();
+        setPenduduk(pendudukData);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     }
-    fetchProfil();
-  }, [])
+    fetchData();
+  }, []);
+
+  const calculateAgeCategory = (tanggal_lahir: string): string => {
+    const birthYear = new Date(tanggal_lahir).getFullYear();
+    const age = currentYear - birthYear;
+    if (age >= 5 && age <= 11) {
+      return 'Anak-anak (5 - 11 tahun)';
+    } else if (age >= 12 && age <= 25) {
+      return 'Remaja (12 - 25 tahun)';
+    } else if (age >= 26 && age <= 45) {
+      return 'Dewasa (26 - 45 tahun)';
+    } else if (age >= 46 && age <= 65) {
+      return 'Lansia (46 - 65 tahun)';
+    } else {
+      return 'Usia tidak sesuai kategori';
+    }
+  };
 
   const data = [
-    { name: 'Anak-anak (5 - 11 tahun)', value: 10 },
-    { name: 'Remaja (12 - 25 tahun)', value: 15 },
-    { name: 'Dewasa (26 - 45 tahun)', value: 20 },
-    { name: 'Lansia (46 - 65 tahun)', value: 20 },
+    { name: 'Anak-anak (5 - 11 tahun)', value: penduduk.filter(p => calculateAgeCategory(p.tanggal_lahir) === 'Anak-anak (5 - 11 tahun)').length },
+    { name: 'Remaja (12 - 25 tahun)', value: penduduk.filter(p => calculateAgeCategory(p.tanggal_lahir) === 'Remaja (12 - 25 tahun)').length },
+    { name: 'Dewasa (26 - 45 tahun)', value: penduduk.filter(p => calculateAgeCategory(p.tanggal_lahir) === 'Dewasa (26 - 45 tahun)').length },
+    { name: 'Lansia (46 - 65 tahun)', value: penduduk.filter(p => calculateAgeCategory(p.tanggal_lahir) === 'Lansia (46 - 65 tahun)').length },
   ];
 
-  const COLORS = ['#0369A1', '#1D6FE9', '#E9871D','#0D9276'];
+  const COLORS = ['#0369A1', '#1D6FE9', '#E9871D', '#0D9276'];
+
   return (
     <div className="bg-[#F8F2F2]">
       <Layout>
-        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">Statistik Penduduk  - Usia</div>
+        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">
+          Statistik Penduduk  - Usia
+        </div>
         <div className="bg-white p-4 rounded-[8px] ml-[56px] mr-[56px] mt-4">
           <div className="flex justify-center">
             <div className="bg-gradient-to-r from-blue-600 to-blue-900 w-[300px] p-3 rounded-[5px] text-white text-center">
@@ -72,30 +96,19 @@ export default function UsiaPage() {
                   <TableHead >Usia</TableHead>
                   <TableHead className='text-center'>Laki-laki</TableHead>
                   <TableHead className='text-center'>Perempuan</TableHead>
-
                 </TableHeader>
                 <TableBody>
-                  <TableRow >
-                    <TableCell >Anak-anak (5 - 11 tahun)</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                  <TableRow >
-                    <TableCell>Remaja (12 - 25 tahun)</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                  <TableRow >
-                    <TableCell>Dewasa (26 - 45 tahun)</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                  <TableRow >
-                    <TableCell>Lansia (46 - 65 tahun)</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-
+                  {data.map((item, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{item.name}</TableCell>
+                      <TableCell className='text-center'>
+                        {penduduk.filter(p => calculateAgeCategory(p.tanggal_lahir) === item.name && p.jenis_kelamin === 'Laki-laki').length}
+                      </TableCell>
+                      <TableCell className='text-center'>
+                        {penduduk.filter(p => calculateAgeCategory(p.tanggal_lahir) === item.name && p.jenis_kelamin === 'Perempuan').length}
+                      </TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </div>
@@ -103,5 +116,5 @@ export default function UsiaPage() {
         </div>
       </Layout>
     </div>
-  )
+  );
 }

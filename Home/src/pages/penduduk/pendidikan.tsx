@@ -46,7 +46,7 @@ export default function PendidikanPage() {
 
   const pieData = pendidikanData.map(item => ({ name: item.name, value: item.lakiLaki + item.perempuan }));
 
-  const COLORS = ['#0369A1', '#1D6FE9', '#E9871D'];
+  const COLORS = ['#0369A1', '#1D6FE9', '#E9871D','#F61616','#0D9276','#834C10','#0C3510'];
 
   return (
     <div className="bg-[#F8F2F2]">
@@ -65,7 +65,7 @@ export default function PendidikanPage() {
               <div className="bg-[#E9871D] w-[200px] rounded-[7px] mt-4 ml-[50px]">
                 <div className="text-white text-center p-2"> Data Diagram</div>
               </div>
-              <PieChart width={400} height={300} margin={{ top: 20, right: 0, left: -40, bottom: 5 }}>
+              <PieChart width={400} height={300} margin={{ top: 20, right: 0, left: -90, bottom: 5 }}>
                 <Pie
                   data={pieData}
                   cx={200}
