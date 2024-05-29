@@ -14,6 +14,14 @@ import React from "react";
 import PemerintahanPage from "./pages/profil/pemerintahan.js";
 import TugasPage from "./pages/profil/tugas.js";
 import ApbdesPage from "./pages/Apbdes/index.js";
+import PendidikanPage from "./pages/penduduk/pendidikan.js";
+import AgamaPage from "./pages/penduduk/agama.js";
+import PekerjaanPage from "./pages/penduduk/pekerjaan.js";
+import PerkawinanPage from "./pages/penduduk/perkawinan.js";
+import UsiaPage from "./pages/penduduk/usia.js";
+import DusunPage from "./pages/penduduk/dusun.js";
+import DusunDetailPage from "./pages/penduduk/detailDusun.js";
+import BantuanPage from "./pages/penduduk/bantuan.js";
 export default function App() {
   return (
     <Router>
@@ -22,7 +30,15 @@ export default function App() {
         <Route path="/profil" element={<ProfilPage/>} />
         <Route path="/agenda" element={<AgendaPage/>} />
         <Route path="/berita" element={<BeritaPage/>} />
+        <Route path="/bantuan" element={<BantuanPage/>} />
         <Route path="/pengumuman" element={<PengumumanPage/>} />
+        <Route path="/pendidikan" element={<PendidikanPage/>} />
+        <Route path="/perkawinan" element={<PerkawinanPage/>} />
+        <Route path="/pekerjaan" element={<PekerjaanPage/>} />
+        <Route path="/usia" element={<UsiaPage/>} />
+        <Route path="/dusun" element={<DusunPage/>} />
+        <Route path="/dusun/:id" element={<DusunDetailPage/>} />
+        <Route path="/agama" element={<AgamaPage/>} />
         <Route path="/pemerintahan" element={<PemerintahanPage/>} />
         <Route path="/tugas" element={<TugasPage/>} />
         <Route path="/apbdes/:id" element={<ApbdesPage/>} />

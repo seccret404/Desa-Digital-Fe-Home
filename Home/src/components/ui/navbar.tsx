@@ -149,6 +149,12 @@ export default function Navbar() {
                                              <MenubarTrigger className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300'>Data Statistik<ArrowBottomIcon /> </MenubarTrigger>
                                              <MenubarContent className='bg-[#0369A1]  bg-opacity-80 text-white rounded-[5px] p-2 text-start' style={{ zIndex: 50 }}>
                                                   <MenubarItem><Link to={'/pendidikan'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Statistik Pendidikan</Link></MenubarItem>
+                                                  <MenubarItem><Link to={'/agama'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Statistik Agama</Link></MenubarItem>
+                                                  <MenubarItem><Link to={'/pekerjaan'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Statistik Pekerjaan</Link></MenubarItem>
+                                                  <MenubarItem><Link to={'/perkawinan'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Statistik Perkawinan</Link></MenubarItem>
+                                                  <MenubarItem><Link to={'/usia'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Statistik Usia</Link></MenubarItem>
+                                                  <MenubarItem><Link to={'/dusun'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Statistik Dusun</Link></MenubarItem>
+                                                  <MenubarItem><Link to={'/bantuan'} className='hover:text-[#020B10] rounded-[5px] p-2 transition-colors duration-300 w-full'>Statistik Bantuan</Link></MenubarItem>
                                              </MenubarContent>
                                         </MenubarMenu>
                                    </Menubar>
