@@ -66,7 +66,7 @@ export default function DetailOrganisasi() {
                                         <div className="font-bold">{organisasi?.ketua}</div>
                                    </div>
                                    <div className="flex border border-[#000000] p-2">
-                                        <div className="w-[200px]">Ketua</div>
+                                        <div className="w-[200px]">Alamat Organisasi</div>
                                         <div className="font-bold">{organisasi?.alamat_organisasi}</div>
                                    </div>
                               </div>
