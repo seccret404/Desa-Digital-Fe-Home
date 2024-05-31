@@ -400,7 +400,7 @@ useEffect(() => {
                 Profil Desa
                 <div className="bg-[#0369A1] h-1"></div>
               </div>
-              <div className="text-justify" dangerouslySetInnerHTML={{ __html: limitTextToPengumuman(item.profil_singkat) }}>
+              <div className="text-justify" dangerouslySetInnerHTML={{ __html: (item.profil_singkat) }}>
                 
               </div>
               <div className="flex justify-between">
@@ -409,14 +409,14 @@ useEffect(() => {
                     Visi
                     <div className="bg-[#0369A1] h-1"></div>
                   </div>
-                  <div className="text-justify" dangerouslySetInnerHTML={{ __html: limitTextToPengumuman(item.visi_desa) }}>
+                  <div className="text-justify" dangerouslySetInnerHTML={{ __html: (item.visi_desa) }}>
                   </div>
 
                   <div className="text-black text-[24px] font-medium uderline w-[44px] mt-2">
                     Misi
                     <div className="bg-[#0369A1] h-1"></div>
                   </div>
-                  <div className="text-justify" dangerouslySetInnerHTML={{ __html: limitTextToPengumuman(item.misi_desa) }}>
+                  <div className="text-justify" dangerouslySetInnerHTML={{ __html: (item.misi_desa) }}>
                   </div>
                 </div>
                 <div className="p-4">
