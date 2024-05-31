@@ -166,7 +166,7 @@ export default function Navbar() {
 
                                   
                                    <div className='flex hover:bg-[#0890EA]  hover:bg-opacity-20 rounded-[5px] p-2 transition-colors duration-300' style={{ zIndex: 50 }}>
-                                        <Link to={''}>
+                                        <Link to={`https://desawisata.cloud/`}>
                                              Potensi desa
                                         </Link>
                                    </div>
