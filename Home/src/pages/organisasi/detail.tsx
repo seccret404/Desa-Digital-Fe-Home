@@ -92,7 +92,7 @@ export default function DetailOrganisasi() {
                                              <SekreIcon size={100}/>
                                         </div>
                                         <div className="text-[18px] font-medium mt-[50px]">Sekretaris</div>
-                                        <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Exaudi Siregar</div>
+                                        <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">{organisasi?.sekretaris}</div>
                                    </div>
                                    <div className="bg-white shadow w-[205px] h-[270px] flex flex-col justify-between  items-center">
                                         <div className="mt-8">
