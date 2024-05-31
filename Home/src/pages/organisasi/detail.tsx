@@ -65,6 +65,10 @@ export default function DetailOrganisasi() {
                                         <div className="w-[200px]">Ketua</div>
                                         <div className="font-bold">{organisasi?.ketua}</div>
                                    </div>
+                                   <div className="flex border border-[#000000] p-2">
+                                        <div className="w-[200px]">Ketua</div>
+                                        <div className="font-bold">{organisasi?.alamat_organisasi}</div>
+                                   </div>
                               </div>
                          </div>
                          <div className="text-justify text-[16px] mt-4" dangerouslySetInnerHTML={{ __html: (organisasi?.deskripsi) }}>
