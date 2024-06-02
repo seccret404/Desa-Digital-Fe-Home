@@ -13,7 +13,7 @@ export default function BeritaPage() {
      const [searchText, setSearchText] = useState('');
      const [pengumuman, setPengumuman] = useState<Pengumuman[]>([]);
 
-     const handleChange = (event) => {
+     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
           setSearchText(event.target.value);
      };
 
@@ -43,14 +43,18 @@ export default function BeritaPage() {
           async function fetchPengumuman() {
                try {
                     const data = await getPengumuman();
-                    const limaDataPertama = data.slice(0, 3);
-                    setPengumuman(limaDataPertama);
+                    setPengumuman(data);
                } catch (error) {
                     console.error('Error fetching berita:', error);
                }
           }
           fetchPengumuman();
      }, []);
+
+     // Filter berita based on searchText
+     const filteredBerita = berita.filter(item =>
+          item.judul_berita.toLowerCase().includes(searchText.toLowerCase())
+     );
 
      return (
 
@@ -62,7 +66,7 @@ export default function BeritaPage() {
                               <div className="items-center  ">
                                    <div className="text-[#0369A1] text-[22px] font-medium tracking-[5px] text-center">Berita Desa</div>
                                    <div className="w-[500px] flex mt-2 items-center">
-                                        <input
+                                   <input
                                              value={searchText}
                                              onChange={handleChange}
                                              type="search"
@@ -81,7 +85,7 @@ export default function BeritaPage() {
                          <div className="flex justify-between mt-4">
                               <div className="grid grid-cols-1  ">
 
-                                   {berita.map((item, index) =>
+                                   {filteredBerita.map((item, index) =>
                                         <Link to={`/berita-detail/${item.id}`}>
                                              <div className="bg-white shadow w-[499px] mt-2">
                                                   <div className="flex p-2">

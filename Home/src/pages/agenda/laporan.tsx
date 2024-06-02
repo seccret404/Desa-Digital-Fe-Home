@@ -40,7 +40,11 @@ export default function LaporanAgenda() {
      }, [id]);
 
      if (!agenda) {
-          return <div>Loading...</div>;
+          return (
+               <div className="loading-container">
+                 <div className="loading-spinner"></div>
+               </div>
+             );
      }
      const formatRupiah = (number) => {
           return new Intl.NumberFormat('id-ID', {

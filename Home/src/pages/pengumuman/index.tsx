@@ -13,7 +13,7 @@ export default function PengumumanPage() {
      const [pengumuman, setPengumuman] = useState<Pengumuman[]>([]);
      const [agenda, setAgenda] = useState<Agenda[]>([]);
 
-     const handleChange = (event) => {
+     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
           setSearchText(event.target.value);
      };
 
@@ -22,14 +22,14 @@ export default function PengumumanPage() {
           async function fetchPengumuman() {
                try {
                     const data = await getPengumuman();
-                    const limaDataPertama = data.slice(0, 3);
-                    setPengumuman(limaDataPertama);
+                    setPengumuman(data);
                } catch (error) {
-                    console.error('Error fetching berita:', error);
+                    console.error('Error fetching pengumuman:', error);
                }
           }
           fetchPengumuman();
      }, []);
+
      //agenda
      useEffect(() => {
           async function fetchAgenda() {
@@ -38,7 +38,7 @@ export default function PengumumanPage() {
                     const limaDataPertama = data.slice(0, 2);
                     setAgenda(limaDataPertama);
                } catch (error) {
-                    console.error('Error fetching berita:', error);
+                    console.error('Error fetching agenda:', error);
                }
           }
           fetchAgenda();
@@ -55,10 +55,15 @@ export default function PengumumanPage() {
      const limitTextToPengumuman = (text: string) => {
           const words = text.split(' ');
           if (words.length > 7) {
-            return words.slice(0, 7).join(' ') + '...';
+               return words.slice(0, 7).join(' ') + '...';
           }
           return text;
-        };
+     };
+
+     // Filter pengumuman based on searchText
+     const filteredPengumuman = pengumuman.filter(item =>
+          item.judul_pengumuman.toLowerCase().includes(searchText.toLowerCase())
+     );
 
      return (
 
@@ -88,7 +93,7 @@ export default function PengumumanPage() {
                          <div className="font-bold text-[20px]">Daftar Pengumuman</div>
                          <div className="flex justify-between mt-4">
                               <div className="grid grid-cols-1  ">
-                                   {pengumuman.map((item, index) =>
+                                   {filteredPengumuman.map((item, index) =>
                                         <Link to={`/pengumuman-detail/${item.id}`}>
                                              <div className="bg-white shadow w-[499px] mt-2">
                                                   <div className="flex p-2">
@@ -117,7 +122,7 @@ export default function PengumumanPage() {
                                    <div className="bg-[#E9871D] text-white text-center text-[20px] p-3 rounded-tr-[5px] rounded-tl-[5px]  ">Agenda Desa</div>
                                    {agenda.map((item,index) =>
                                    <Link to={''}>
-                                       <div className="bg-[#ffffff] shadow w-[459px] mt-4 text-black m-3" > {/*card*/}
+                                       <div className="bg-[#ffffff] shadow w-[459px] mt-4 text-black m-3" > 
                                         <div className="p-2">
                                              <div className="ml-2">
                                                   <div className="text-[18px] font-medium text-black">{item.nama_kegiatan}</div>

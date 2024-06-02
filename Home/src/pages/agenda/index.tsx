@@ -5,15 +5,16 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAgenda } from "../../services/desaServices";
 import { Agenda } from "../../interfaces/agenda";
+
 export default function AgendaPage() {
      const [searchText, setSearchText] = useState('');
      const [agenda, setAgenda] = useState<Agenda[]>([]);
 
-     const handleChange = (event) => {
+     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
           setSearchText(event.target.value);
      };
 
-     //agenda
+     // Fetch agenda items
      useEffect(() => {
           async function fetchAgenda() {
                try {
@@ -21,11 +22,12 @@ export default function AgendaPage() {
                     const limaDataPertama = data.slice(0, 2);
                     setAgenda(limaDataPertama);
                } catch (error) {
-                    console.error('Error fetching berita:', error);
+                    console.error('Error fetching agenda:', error);
                }
           }
           fetchAgenda();
      }, []);
+
      const limitTextToPengumuman = (text: string) => {
           const words = text.split(' ');
           if (words.length > 7) {
@@ -33,6 +35,12 @@ export default function AgendaPage() {
           }
           return text;
      };
+
+     // Filter agenda based on searchText
+     const filteredAgenda = agenda.filter(item =>
+          item.nama_kegiatan.toLowerCase().includes(searchText.toLowerCase())
+     );
+
 
      return (
           <div className="">
@@ -59,7 +67,7 @@ export default function AgendaPage() {
                          </div>
                          <div className="flex justify-center items-center">
                               <div className="grid grid-cols-2 gap-8">
-                                   {agenda.map((item, index) =>
+                                   {filteredAgenda.map((item, index) =>
                                         <Link to={`/agenda-detail/${item.id}`}>
                                              <div className="bg-[#0369A1] shadow w-[499px] mt-8 text-white" > {/*card*/}
                                                   <div className="p-2">

@@ -196,7 +196,7 @@ useEffect(() => {
                 </div>
                 <div className="">
                   <Button color="white" bgColor="#E9871D" width={209} height={41} rounded={5}>
-                    Lihat Selengkapnya
+                   <Link to={'/pemerintahan'}> Lihat Selengkapnya</Link>
                   </Button>
                 </div>
 
@@ -256,37 +256,37 @@ useEffect(() => {
                 <div className="">
                   <div className="text-[20px] font-medium">Filter</div>
                   <div className="bg-[#0369A1] bg-opacity-20 p-2 grid grid-cols-2 gap-9 rounded-[10px] font-medium">
-                    <Link to={""}>
+                    <Link to={'/pendidikan'}>
                       <div className="bg-[#0369A1] flex items-center rounded-[5px] w-[206px] hover:opacity-80 ">
                         <div className="bg-white w-[50px] p-2 rounded-tl-[5px] rounded-bl-[5px] flex justify-center"><PendidikanICon height={39} width={29} /></div>
                         <div className="text-white text-[20px] p-2 w-[149px]">Pendidikan</div>
                       </div>
                     </Link>
-                    <Link to={""}>
+                    <Link to={'/usia'}>
                       <div className="bg-[#0D9276] flex items-center rounded-[5px] w-[206px] hover:opacity-80">
                         <div className="bg-white w-[50px] p-2 rounded-tl-[5px] rounded-bl-[5px] flex justify-center"><OldICon height={39} width={29} /></div>
                         <div className="text-white text-[20px] p-2 w-[149px]">Usia</div>
                       </div>
                     </Link>
-                    <Link to={""}>
+                    <Link to={'/pekerjaan'}>
                       <div className="bg-[#E9871D] flex items-center rounded-[5px] w-[206px] hover:opacity-80">
                         <div className="bg-white w-[50px] p-2 rounded-tl-[5px] rounded-bl-[5px] flex justify-center"><JobICon height={39} width={29} /></div>
                         <div className="text-white text-[20px] p-2 w-[149px]">Pekerjaan</div>
                       </div>
                     </Link>
-                    <Link to={""}>
+                    <Link to={'/agama'}>
                       <div className="bg-[#FFFFFF] flex items-center rounded-[5px] w-[206px] hover:opacity-80">
                         <div className="bg-[#0D9276] w-[50px] p-2 rounded-tl-[5px] rounded-bl-[5px] flex justify-center"><ReliICon height={39} width={29} /></div>
                         <div className="text-[#0D9276] text-[20px] p-2 w-[149px]">Agama</div>
                       </div>
                     </Link>
-                    <Link to={""}>
+                    <Link to={'/perkawinan'}>
                       <div className="bg-[#E13A3A] flex items-center rounded-[5px] w-[206px] hover:opacity-80">
                         <div className="bg-white w-[50px] p-2 rounded-tl-[5px] rounded-bl-[5px] flex justify-center"><LoveICon height={39} width={29} /></div>
                         <div className="text-white text-[20px] p-2 w-[149px]">Perkawinan</div>
                       </div>
                     </Link>
-                    <Link to={""}>
+                    <Link to={'/dusun'}>
                       <div className="bg-[#000000] flex items-center rounded-[5px] w-[206px] hover:opacity-80">
                         <div className="bg-white w-[50px] p-2 rounded-tl-[5px] rounded-bl-[5px] flex justify-center"><DusunICon height={39} width={29} /></div>
                         <div className="text-white text-[20px] p-2 w-[149px]">Dusun</div>
@@ -305,7 +305,8 @@ useEffect(() => {
               <div className="">
                 <div className="text-white bg-[#E9871D] w-[230px] rounded-[5px] p-2 text-[18px] text-center shadow">Berita Desa</div>
                 {berita.map((item,index) =>
-                   <div className="bg-white shadow w-[499px] mt-8" key={item.id}>
+                <Link to={`/berita-detail/${item.id}`}>
+                 <div className="bg-white shadow w-[499px] mt-8" key={item.id}>
                   <div className="flex p-2">
                     {/* <img src={'rapat'} alt="" width={139} height={118} /> */}
                     <div className="">
@@ -329,12 +330,15 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
+                </Link>
+                  
                 )}
               </div>
               <div className="">
                 <div className="text-white bg-[#0369A1] w-[230px] rounded-[5px] p-2 text-[18px] text-center shadow">Pengumuman</div>
                 {pengumuman.map((item,index) =>
-                <div className="bg-white shadow w-[499px] mt-8">
+                <Link to={`/pengumuman-detail/${item.id}`}>
+<div className="bg-white shadow w-[499px] mt-8">
                   <div className="flex p-2">
                     <div className="">
                     {item.file_pengumuman && typeof item.file_pengumuman === 'string' && (
@@ -357,6 +361,8 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
+                </Link>
+                
                 )}
                 
               </div>
@@ -367,7 +373,8 @@ useEffect(() => {
             <div className=" ml-[36px] mr-[36px]">
               <div className="grid grid-cols-2">
                 {agenda.map((item,index) =>
-                 <div className="bg-white shadow w-[499px] mt-8" key={item.id}> {/*card*/}
+                <Link to={`/agenda-detail/${item.id}`}>
+                  <div className="bg-white shadow w-[499px] mt-8" key={item.id}> {/*card*/}
                   <div className="p-2">
                     <div className="ml-2">
                       <div className="text-[18px] font-medium text-black"> {item.nama_kegiatan}</div>
@@ -381,6 +388,8 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
+                </Link>
+                 
                 )}
               </div>
               <div className="flex justify-start mt-4 ">

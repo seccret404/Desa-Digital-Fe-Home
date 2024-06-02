@@ -12,19 +12,19 @@ export default function DetailPengumumanPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [agenda, setAgenda] = useState<Agenda[]>([]);
-  
+
   useEffect(() => {
-     async function fetchAgenda() {
-          try {
-               const data = await getAgenda();
-               const limaDataPertama = data.slice(0, 2);
-               setAgenda(limaDataPertama);
-          } catch (error) {
-               console.error('Error fetching berita:', error);
-          }
-     }
-     fetchAgenda();
-}, []);
+    async function fetchAgenda() {
+      try {
+        const data = await getAgenda();
+        const limaDataPertama = data.slice(0, 2);
+        setAgenda(limaDataPertama);
+      } catch (error) {
+        console.error('Error fetching berita:', error);
+      }
+    }
+    fetchAgenda();
+  }, []);
   useEffect(() => {
     const fetchPengumuman = async () => {
       try {
@@ -44,7 +44,11 @@ export default function DetailPengumumanPage() {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading-container">
+        <div className="loading-spinner"></div>
+      </div>
+    );
   }
 
   if (error) {
@@ -55,12 +59,12 @@ export default function DetailPengumumanPage() {
     return <div>No data found</div>;
   }
   const limitTextToPengumuman = (text: string) => {
-     const words = text.split(' ');
-     if (words.length > 7) {
-          return words.slice(0, 7).join(' ') + '...';
-     }
-     return text;
-};
+    const words = text.split(' ');
+    if (words.length > 7) {
+      return words.slice(0, 7).join(' ') + '...';
+    }
+    return text;
+  };
 
   return (
     <div className="bg-[#F8F2F2]">
@@ -86,32 +90,36 @@ export default function DetailPengumumanPage() {
               <div className="text-justify text-[16px] mt-4 p-2" dangerouslySetInnerHTML={{ __html: pengumuman.deskripsi_pengumuman }}>
               </div>
               <div className="m-2">
-                <img src={''} alt="" className="w-full h-[150px]" />
-              </div>
+              {pengumuman.cover_pengumuman && typeof pengumuman.cover_pengumuman === 'string' && (
+                pengumuman.cover_pengumuman.endsWith('.jpg') || pengumuman.cover_pengumuman.endsWith('.png') || pengumuman.cover_pengumuman.endsWith('.jpeg') ? (
+                  <img src={`https://desa-digital-bakend-production.up.railway.app/api/pengumuman_file/${pengumuman.cover_pengumuman}`} alt="Cover Pengumuman" className="w-full h-auto" />
+                ) : pengumuman.cover_pengumuman.endsWith('.pdf') ? (
+                  <a href={`https://desa-digital-bakend-production.up.railway.app/api/pengumuman_file/${pengumuman.cover_pengumuman}`} target="_blank" rel="noopener noreferrer" className="bg-[#D40F0F] p-2 rounded-[5px] text-[white]">Download PDF</a>
+                ) : (
+                  <a href={`https://desa-digital-bakend-production.up.railway.app/api/pengumuman_file/${pengumuman.cover_pengumuman}`} target="_blank" rel="noopener noreferrer">{pengumuman.cover_pengumuman}</a>
+                )
+              )}
+            </div>
             </div>
             <div className="bg-[#0369A1] bg-opacity-20 w-[530px] rounded-[5px]">
               <div className="bg-[#E9871D] text-white text-center text-[20px] p-3 rounded-tr-[5px] rounded-tl-[5px]">Agenda Desa</div>
-              
-              {agenda.map((item,index) =>
-          <Link to={''}>
-               <div className="bg-[#ffffff] shadow w-[459px] mt-8 text-black m-3">
-                <div className="p-2">
-                  <div className="ml-2">
-                    <div className="text-[18px] font-medium text-black">{item.nama_kegiatan}</div>
-                    <div className="flex items-center">
-                      <CalenderICon size={28} />
-                      <div className="text-12">{new Date(item.tanggal_kegiatan).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' })} - {item.lokasi}</div>
-                    </div>
-                    <div className="text-[12px] mt-2" dangerouslySetInnerHTML={{ __html: limitTextToPengumuman(item.deskripsi_kegiatan) }}>
+              {agenda.map((item, index) =>
+                <Link to={''}>
+                  <div className="bg-[#ffffff] shadow w-[459px] mt-8 text-black m-3">
+                    <div className="p-2">
+                      <div className="ml-2">
+                        <div className="text-[18px] font-medium text-black">{item.nama_kegiatan}</div>
+                        <div className="flex items-center">
+                          <CalenderICon size={28} />
+                          <div className="text-12">{new Date(item.tanggal_kegiatan).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' })} - {item.lokasi}</div>
+                        </div>
+                        <div className="text-[12px] mt-2" dangerouslySetInnerHTML={{ __html: limitTextToPengumuman(item.deskripsi_kegiatan) }}>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              </Link>
-          )}
-              
-              
-
+                </Link>
+              )}
             </div>
           </div>
         </div>

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout";
 import SearchIcon from "../../components/icon/searchIcon";
 import CalenderICon from "../../components/icon/calenderIcon";
-import organisasi from '../../assets/organisasi.png'
 import { Link } from "react-router-dom";
 import React from "react";
 import { Organisasi } from "../../interfaces/organisasi";
@@ -27,6 +26,10 @@ export default function OrganisasiPage() {
           }
           fetchOrganisasi();
      },[])
+
+     const filteredOrganisasi = organisasi.filter(item =>
+          item.nama_lembaga.toLowerCase().includes(searchText.toLowerCase())
+     );
      return (
           <div className="bg-[#F8F2F2]">
                <Layout>
@@ -53,10 +56,10 @@ export default function OrganisasiPage() {
                          <div className="font-bold text-[20px]">Daftar Organisasi</div>
                          <div className="flex justify-between mt-4">
                               <div className="grid grid-cols-3 gap-5 mr-[50px]">
-                                   {organisasi.map((item,index) =>
+                                   {filteredOrganisasi.map((item,index) =>
                                     <Link to={`/organisasi-detail/${item.id}`}>
                                 <div className="bg-[#0369A1] text-white flex flex-col shadow-lg ">
-                                        <div className="flex justify-center"><img src={''} alt="" /></div>
+                                        <div className="flex justify-center"><img src={`https://desa-digital-bakend-production.up.railway.app/images/organisasi/${item.logo_organisasi}`} alt="" /></div>
                                         <div className="text-center p-10">{item.nama_lembaga}</div>
                                         <div className="flex justify-between">
                                              <div className="bg-white w-[25px]"></div>

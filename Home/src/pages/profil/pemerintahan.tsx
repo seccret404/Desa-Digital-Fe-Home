@@ -28,22 +28,24 @@ export default function PemerintahanPage() {
           async function fetchPemerintah() {
                try {
                     const data = await getPemerintah();
-                    const kp = data.filter(p => p.jabatan == "Kepala Desa")
-                    const sd = data.filter(p => p.jabatan == "Sekretaris Desa")
-                    const bd = data.filter(p => p.jabatan == "Kaur Keuangan")
-                    const bp = data.filter(p => p.jabatan == "Ketua BPD")
+                    const currentYear = new Date().getFullYear();
+                    const filteredData = data.filter(p => new Date(p.tahun_selesai).getFullYear() >= currentYear);
+
+                    const kp = filteredData.filter(p => p.jabatan === "Kepala Desa");
+                    const sd = filteredData.filter(p => p.jabatan === "Sekretaris Desa");
+                    const bd = filteredData.filter(p => p.jabatan === "Kaur Keuangan");
+                    const bp = filteredData.filter(p => p.jabatan === "Ketua BPD");
 
                     setkepdes(kp);
                     setSekdes(sd);
-                    setbendahara(bd)
+                    setbendahara(bd);
                     setBpd(bp);
                } catch (error) {
                     console.error('Error fetching pemerintah:', error);
                }
-
           }
           fetchPemerintah();
-     }, [])
+     }, []);
      return (
           <div className="bg-[#F8F2F2]">
                <Layout>
