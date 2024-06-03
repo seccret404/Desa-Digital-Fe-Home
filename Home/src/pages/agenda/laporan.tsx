@@ -87,7 +87,7 @@ export default function LaporanAgenda() {
                          <div className="text-[18px] font-medium mt-4">Dokumentasi :</div>
                          <div className="grid grid-cols-3 gap-4">
                          {laporan.map((lap) => (
-                                  <img src={`${lap.dokumentasi}`} alt="" />
+                                  <img src={`https://desa-api.desajanggadolok.id//api/dokumentasi/${lap.dokumentasi}`} alt="" />
                               ))}
                              
                          </div>

@@ -89,13 +89,13 @@ export default function BeritaPage() {
                                         <Link to={`/berita-detail/${item.id}`}>
                                              <div className="bg-white shadow w-[499px] mt-2">
                                                   <div className="flex p-2">
-                                                       {item.cover && typeof item.cover === 'string' && (
-                                                            item.cover.endsWith('.jpg') || item.cover.endsWith('.png') || item.cover.endsWith('.jpeg') ? (
-                                                                 <img src={`https://desa-digital-bakend-production.up.railway.app/api/berita_cover/${item.cover}`} alt="Cover Berita" className="w-20 h-auto" />
-                                                            ) : (
-                                                                 <a href={`https://desa-digital-bakend-production.up.railway.app/api/berita_cover/${item.cover}`} target="_blank" rel="noopener noreferrer">{item.cover}</a>
-                                                            )
-                                                       )}
+                                                  {item.cover && typeof item.cover === 'string' && (
+                                                    item.cover.endsWith('.jpg') || item.cover.endsWith('.png') || item.cover.endsWith('.jpeg') ? (
+                                                        <img src={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} alt="Cover Berita" className="w-[200px] h-full" />
+                                                    ) : (
+                                                        <a href={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} target="_blank" rel="noopener noreferrer">{item.cover}</a>
+                                                    )
+                                                )}   
                                                        <div className="ml-2">
                                                             <div className="text-[18px] font-medium text-black">{item.judul_berita}</div>
                                                             <div className="flex items-center">

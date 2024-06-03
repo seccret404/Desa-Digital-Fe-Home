@@ -84,9 +84,9 @@ export default function DetailBeritaPage() {
                                    <div className="m-2">
                                         {berita.cover && typeof berita.cover === 'string' && (
                                              berita.cover.endsWith('.jpg') || berita.cover.endsWith('.png') || berita.cover.endsWith('.jpeg') ? (
-                                                  <img src={`https://desa-digital-bakend-production.up.railway.app/api/berita_cover/${berita.cover}`} alt="Cover Berita" className="w-full h-auto " />
+                                                  <img src={`https://desa-api.desajanggadolok.id/images/cover/${berita.cover}`} alt="Cover Berita" className="w-full h-auto " />
                                              ) : (
-                                                  <a href={`https://desa-digital-bakend-production.up.railway.app/api/berita_cover/${berita.cover}`} target="_blank" rel="noopener noreferrer">{berita.cover}</a>
+                                                  <a href={`https://desa-api.desajanggadolok.id/images/cover/${berita.cover}`} target="_blank" rel="noopener noreferrer">{berita.cover}</a>
                                              )
                                         )}
                                    </div>
