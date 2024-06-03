@@ -16,7 +16,7 @@ export default function TugasPage() {
         async function fetchProfil() {
             try {
                 const data = await getProfil();
-                setProfil(data[0]); // Assuming getProfil returns an array and we need the first item
+                setProfil(data[0]); 
             } catch (error) {
                 console.error('Error fetching profil:', error);
             }
