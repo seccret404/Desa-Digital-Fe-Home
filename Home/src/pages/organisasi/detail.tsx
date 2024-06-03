@@ -47,7 +47,7 @@ export default function DetailOrganisasi() {
                     <div className="text-[24px] text-center font-bold ml-[150px] mr-[150px] ">Pemerintahan {profil?.nama_desa} Kecamatan {profil?.kecamatan} {profil?.kabupaten} Provinsi {profil?.provinsi}</div>
                     <div className="bg-white ml-[56px] mr-[56px] mt-[27px] mt-[17px] p-[29px] rounded-[10px] mb-[20px]">
                          <div className="flex justify-between items-center ml-[100px] mr-[100px] border-[#000000] border p-2">
-                              <img src={`https://desa-digital-bakend-production.up.railway.app/images/organisasi/${organisasi?.logo_organisasi}`} alt="" className="w-[300px]" />
+                              <img src={`https://desa-api.desajanggadolok.id/images/organisasi/${organisasi?.logo_organisasi}`} alt="" className="w-[300px]" />
                               <div className="border-[2px] border-[#000000] p-4">
                                    <div className="flex border border-[#000000] p-2">
                                         <div className="w-[200px] ">Nama Organisasi</div>

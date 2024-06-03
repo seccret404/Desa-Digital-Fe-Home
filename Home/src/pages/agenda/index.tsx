@@ -19,8 +19,8 @@ export default function AgendaPage() {
           async function fetchAgenda() {
                try {
                     const data = await getAgenda();
-                    const limaDataPertama = data.slice(0, 2);
-                    setAgenda(limaDataPertama);
+                    
+                    setAgenda(data);
                } catch (error) {
                     console.error('Error fetching agenda:', error);
                }

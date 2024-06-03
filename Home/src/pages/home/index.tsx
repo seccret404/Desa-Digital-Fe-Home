@@ -205,7 +205,7 @@ useEffect(() => {
               {kepdes.map((item, index) => (
           <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
             <div className="mt-3">
-              <img src={''} alt={item.nama} className="rounded-[10px]" />
+              <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px]" />
             </div>
             <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
             <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Kepala Desa</div>
@@ -214,7 +214,7 @@ useEffect(() => {
         {sekdes.map((item, index) => (
           <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
             <div className="mt-3">
-              <img src={''} alt={item.nama} className="rounded-[10px]" />
+              <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px]" />
             </div>
             <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
             <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Sekretaris Desa</div>
@@ -223,7 +223,7 @@ useEffect(() => {
         {bendahara.map((item, index) => (
           <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
             <div className="mt-3">
-              <img src={''} alt={item.nama} className="rounded-[10px]" />
+              <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px]" />
             </div>
             <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
             <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Bendahara Desa</div>
@@ -312,9 +312,9 @@ useEffect(() => {
                     <div className="">
                     {item.cover && typeof item.cover === 'string' && (
                                                     item.cover.endsWith('.jpg') || item.cover.endsWith('.png') || item.cover.endsWith('.jpeg') ? (
-                                                        <img src={`https://desa-digital-bakend-production.up.railway.app/api/berita_cover/${item.cover}`} alt="Cover Berita" className="w-20 h-auto" />
+                                                        <img src={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} alt="Cover Berita" className="w-20 h-auto" />
                                                     ) : (
-                                                        <a href={`https://desa-digital-bakend-production.up.railway.app/api/berita_cover/${item.cover}`} target="_blank" rel="noopener noreferrer">{item.cover}</a>
+                                                        <a href={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} target="_blank" rel="noopener noreferrer">{item.cover}</a>
                                                     )
                                                 )}      
                     </div>
@@ -343,9 +343,9 @@ useEffect(() => {
                     <div className="">
                     {item.file_pengumuman && typeof item.file_pengumuman === 'string' && (
                                                     item.file_pengumuman.endsWith('.jpg') || item.file_pengumuman.endsWith('.png') || item.file_pengumuman.endsWith('.jpeg') ? (
-                                                        <img src={`https://desa-digital-bakend-production.up.railway.app/api/pengumuman_cover/${item.file_pengumuman}`} alt="Cover Pengumuman" className="w-20 h-auto" />
+                                                        <img src={`https://desa-api.desajanggadolok.id/api/pengumuman_cover/${item.file_pengumuman}`} alt="Cover Pengumuman" className="w-20 h-auto" />
                                                     ) : (
-                                                        <a href={`https://desa-digital-bakend-production.up.railway.app/api/pengumuman_cover/${item.file_pengumuman}`} target="_blank" rel="noopener noreferrer">{item.file_pengumuman}</a>
+                                                        <a href={`https://desa-api.desajanggadolok.id/api/pengumuman_cover/${item.file_pengumuman}`} target="_blank" rel="noopener noreferrer">{item.file_pengumuman}</a>
                                                     )
                                                 )}
                     </div>

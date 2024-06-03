@@ -53,7 +53,7 @@ export default function ProfilPage() {
                             </div>
                             <div>
                                 {profil.gambar_desa && typeof profil.gambar_desa === 'string' && (
-                                    <img src={`https://desa-digital-bakend-production.up.railway.app/api/profile/${profil.gambar_desa}`} alt="Desa" className="w-full h-auto rounded" />
+                                    <img src={`https://desa-api.desajanggadolok.id/api/profile/${profil.gambar_desa}`} alt="Desa" className="w-full h-auto rounded" />
                                 )}
                             </div>
                         </div>
