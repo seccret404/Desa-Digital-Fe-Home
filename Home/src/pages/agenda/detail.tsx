@@ -61,8 +61,8 @@ export default function DetailAgenda() {
      return (
           <div className="bg-[#F8F2F2]">
                <Layout>
-                    <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">Detail Agenda</div>
-                    <div className="bg-white ml-[56px] mr-[56px] mt-[27px] mt-[17px] p-[20px] rounded-[10px] mb-[20px]">
+                    <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] m-2 md:ml-[56px] md:mr-[56px] mt-[27px]">Detail Agenda</div>
+                    <div className="bg-white m-2 md:ml-[56px] md:mr-[56px] mt-[27px] mt-[17px] p-[20px] rounded-[10px] mb-[20px]">
                          <div className="text-[20px] font-bold">{agenda.nama_kegiatan}</div>
                          <div className="flex items-center mt-2">
                               <CalenderICon size={28} />

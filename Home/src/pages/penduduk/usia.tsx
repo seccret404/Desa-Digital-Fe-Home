@@ -53,21 +53,21 @@ export default function UsiaPage() {
   return (
     <div className="bg-[#F8F2F2]">
       <Layout>
-        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">
+        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] md:ml-[56px] md:mr-[56px] m-2 mt-[27px]">
           Statistik Penduduk  - Usia
         </div>
-        <div className="bg-white p-4 rounded-[8px] ml-[56px] mr-[56px] mt-4">
+        <div className="bg-white p-4 rounded-[8px] md:ml-[56px] md:mr-[56px] m-2 mt-4">
           <div className="flex justify-center">
             <div className="bg-gradient-to-r from-blue-600 to-blue-900 w-[300px] p-3 rounded-[5px] text-white text-center">
               Data Statistik Pendidikan Usia {profil?.nama_desa} - {currentYear}
             </div>
           </div>
-          <div className="flex  flex-col ml-[100px] mr-[100px] mt-8">
+          <div className="flex  flex-col md:ml-[100px] md:mr-[100px] mt-8">
             <div className="flex flex-col items-center">
               <div className="bg-[#E9871D] w-[200px] rounded-[7px] mt-4 ml-[50px]">
                 <div className="text-white text-center p-2"> Data Diagram</div>
               </div>
-              <PieChart width={450} height={300} margin={{ top: 20, right: 0, left: -50, bottom: 5 }}>
+              <PieChart width={370} height={300} margin={{ top: 20, right: 0, left: -90, bottom: 5 }}>
                 <Pie
                   data={data}
                   cx={200}

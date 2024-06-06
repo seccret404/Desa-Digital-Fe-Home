@@ -57,8 +57,8 @@ export default function LaporanAgenda() {
      return (
           <div className="bg-[#F8F2F2]">
                <Layout>
-                    <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">Detail Agenda</div>
-                    <div className="bg-white ml-[56px] mr-[56px] mt-[27px] mt-[17px] p-[29px] rounded-[10px] mb-[20px]">
+                    <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] m-2 md:ml-[56px] md:mr-[56px] mt-[27px]">Detail Agenda</div>
+                    <div className="bg-white md:ml-[56px] md:mr-[56px] m-2 mt-[27px] mt-[17px] p-[29px] rounded-[10px] mb-[20px]">
                          <div className="text-[20px] font-bold">{agenda.nama_kegiatan}</div>
                          <div className="flex items-center mt-2">
                               <CalenderICon size={28} />
@@ -93,7 +93,7 @@ export default function LaporanAgenda() {
                          </div>
                          <div className="text-[18px] font-medium mt-4">Administrasi</div>
                          <div className="flex items-center justify-center mt-4">
-                              <div className="grid grid-cols-2 gap-10">
+                              <div className="grid md:grid-cols-2 grid-cols-1 gap-10">
                                    <div className="bg-white w-[305px] shadow rounded-[5px]">
                                         <div className="flex justify-between pl-2">
                                              <div className="text-[#E9871D] text-[18px] font-medium uderline w-[130px] mt-4">

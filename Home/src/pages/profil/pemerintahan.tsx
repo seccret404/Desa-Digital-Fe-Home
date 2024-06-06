@@ -71,17 +71,17 @@ export default function PemerintahanPage() {
      return (
           <div className="bg-[#F8F2F2]">
                <Layout>
-                    <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">Strukttur Pemerintahan</div>
-                    <div className="text-center font-bold text-[24px]  flex justify-center ">
-                         <div className="w-[600px]">
+                    <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] md:ml-[56px] md:mr-[56px] m-2 mt-[27px]">Strukttur Pemerintahan</div>
+                    <div className="text-center font-bold md:text-[24px]  flex justify-center ">
+                         <div className="md:w-[600px] w-[300px]">
                               Pemerintahan {profil?.nama_desa} Kecamatan {profil?.kecamatan} {profil?.kabupaten} Provinsi {profil?.provinsi}
                          </div>
                     </div>
-                    <div className="bg-[#ffffff] rounded-[8px] ml-[56px] mr-[56px] p-4 mt-4">
+                    <div className="bg-[#ffffff] rounded-[8px] md:ml-[56px] md:mr-[56px] p-4 mt-4">
                          <div className="bg-[#E9871D] w-[200px] rounded-[17px] ml-[50px]">
                               <div className="text-white text-center p-2">Pemerintahan Desa</div>
                          </div>
-                         <div className="flex justify-between ml-[50px] mr-[50px] mt-4">
+                         <div className="flex flex-wrap items-center justify-center  md:justify-between md:ml-[50px] md:mr-[50px] mt-4">
                               {kepdes.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                         <div className="mt-3">
@@ -123,7 +123,7 @@ export default function PemerintahanPage() {
                          <div className="bg-[#E9871D] w-[200px] rounded-[17px] mt-4 ml-[50px]">
                               <div className="text-white text-center p-2">Bidang Kaur</div>
                          </div>
-                         <div className="flex justify-between flex-wrap ml-[50px] mr-[50px] mt-4">
+                         <div className="flex flex-wrap items-center justify-center  md:justify-between md:ml-[50px] md:mr-[50px] mt-4">
 
                               {pembangunan.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">

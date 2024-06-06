@@ -142,17 +142,17 @@ export default function DusunDetailPage() {
   return (
     <div className="bg-[#F8F2F2]">
       <Layout>
-        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">Detail Data  - {dusun?.nama_dusun}</div>
-        <div className="bg-white p-4 rounded-[8px] ml-[56px] mr-[56px] mt-4">
+        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] md:ml-[56px] md:mr-[56px] m-2 mt-[27px]">Detail Data  - {dusun?.nama_dusun}</div>
+        <div className="bg-white p-4 rounded-[8px] md:ml-[56px] md:mr-[56px] m-2 mt-4">
         <div className="bg-[#0369A1] w-[200px] rounded-[7px] mt-4 mb-3 items-none">
                 <div className="text-white text-center p-2"> {dusun?.nama_dusun}</div>
               </div>
-          <div className="flex  justify-between items-center ml-[100px] mr-[100px] mt-8">
+          <div className="flex flex-wrap justify-between items-center md:ml-[100px] md:mr-[100px] mt-8">
             <div className="">
             <div className="bg-[#0D9276] w-[200px] rounded-[7px] mt-4 mb-3 items-none">
                 <div className="text-white text-center p-2"> Data Agama</div>
               </div>
-              <PieChart width={400} height={300} margin={{ top: 20, right: 0, left: -40, bottom: 5 }}>
+              <PieChart width={350} height={300} margin={{ top: 20, right: 0, left: -70, bottom: 5 }}>
               <Pie
                   data={pieData}
                   cx={200}
@@ -194,12 +194,12 @@ export default function DusunDetailPage() {
             </div>
           </div>
          
-          <div className="flex  justify-between items-center ml-[100px] mr-[100px] mt-8">
+          <div className="flex flex-wrap justify-between items-center md:ml-[100px] md:mr-[100px] mt-8">
             <div className="">
             <div className="bg-[#0D9276] w-[200px] rounded-[7px] mt-4 mb-3 items-none">
                 <div className="text-white text-center p-2"> Data Pekerjaan</div>
               </div>
-              <PieChart width={400} height={300} margin={{ top: 20, right: 0, left: -40, bottom: 5 }}>
+              <PieChart width={300} height={300} margin={{ top: 20, right: 0, left: -90, bottom: 5 }}>
                 <Pie
                   data={pieDatakerja}
                   cx={200}
@@ -240,12 +240,12 @@ export default function DusunDetailPage() {
               </Table>
             </div>
           </div>
-          <div className="flex  justify-between items-center ml-[100px] mr-[100px] mt-8">
+          <div className="flex flex-wrap justify-between items-center md:ml-[100px] md:mr-[100px] mt-8">
             <div className="">
             <div className="bg-[#0D9276] w-[200px] rounded-[7px] mt-4 mb-3 items-none">
                 <div className="text-white text-center p-2"> Data Usia</div>
               </div>
-              <PieChart width={400} height={300} margin={{ top: 20, right: 0, left: -40, bottom: 5 }}>
+              <PieChart width={370} height={300} margin={{ top: 20, right: 0, left: -100, bottom: 5 }}>
                 <Pie
                   data={data}
                   cx={200}
@@ -291,12 +291,12 @@ export default function DusunDetailPage() {
               </Table>
             </div>
           </div>
-          <div className="flex  justify-between items-center ml-[100px] mr-[100px] mt-8">
+          <div className="flex flex-wrap justify-between items-center md:ml-[100px] md:mr-[100px] mt-8">
             <div className="">
             <div className="bg-[#0D9276] w-[200px] rounded-[7px] mt-4 mb-3 items-none">
                 <div className="text-white text-center p-2"> Data Pendidikan</div>
               </div>
-              <PieChart width={400} height={300} margin={{ top: 20, right: 0, left: -40, bottom: 5 }}>
+              <PieChart width={370} height={300} margin={{ top: 20, right: 0, left: -120, bottom: 5 }}>
                 <Pie
                   data={pendidikan}
                   cx={200}

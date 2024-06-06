@@ -45,19 +45,19 @@ export default function AgendaPage() {
      return (
           <div className="">
                <Layout>
-                    <div className="bg-white mt-4 mb-4 ml-[56px] mr-[56px] rounded-[10px] p-6">
+                    <div className="bg-white mt-4 mb-4 m-2 md: md:ml-[56px] md:mr-[56px] rounded-[10px] p-6">
                          <div className="flex justify-center">
                               <div className="items-center  ">
                                    <div className="text-[#0369A1] text-[22px] font-medium tracking-[5px] text-center">Agenda Desa</div>
-                                   <div className="w-[500px] flex mt-2 items-center">
-                                        <input
+                                   <div className="md:w-[500px] w-[300px] flex mt-2 items-center">
+                                   <input
                                              value={searchText}
                                              onChange={handleChange}
                                              type="search"
                                              className="border border-[2px] border-blue-500 w-full h-[40px] rounded-[20px] pl-5 text-[#0369A1] pr-4"
                                         />
                                         {searchText.length === 0 && (
-                                             <div className="absolute ml-[450px]">
+                                             <div className="absolute md:ml-[450px] ml-[260px]">
                                                   <SearchIcon size={27} />
                                              </div>
                                         )}
@@ -66,10 +66,10 @@ export default function AgendaPage() {
                               </div>
                          </div>
                          <div className="flex justify-center items-center">
-                              <div className="grid grid-cols-2 gap-8">
+                              <div className="grid md:grid-cols-2 grid-cols-1 md:gap-8">
                                    {filteredAgenda.map((item, index) =>
                                         <Link to={`/agenda-detail/${item.id}`}>
-                                             <div className="bg-[#0369A1] shadow w-[499px] mt-8 text-white" > {/*card*/}
+                                             <div className="bg-[#0369A1] shadow w-[350px] md:w-[499px] mt-8 text-white" > {/*card*/}
                                                   <div className="p-2">
                                                        <div className="ml-2">
                                                             <div className="text-[18px] font-medium text-white">{item.nama_kegiatan}</div>

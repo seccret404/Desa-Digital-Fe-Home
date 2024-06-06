@@ -61,11 +61,11 @@ export default function BeritaPage() {
 
           <div className="bg-[#F8F2F2]">
                <Layout>
-                    <div className="bg-white mt-4 mb-4 ml-[56px] mr-[56px] rounded-[10px] p-6">
+                    <div className="bg-white mt-4 mb-4 md:ml-[56px] md:mr-[56px] rounded-[10px] m-2 p-6">
                          <div className="flex justify-center">
                               <div className="items-center  ">
                                    <div className="text-[#0369A1] text-[22px] font-medium tracking-[5px] text-center">Berita Desa</div>
-                                   <div className="w-[500px] flex mt-2 items-center">
+                                   <div className="md:w-[500px] w-[300px] flex mt-2 items-center">
                                    <input
                                              value={searchText}
                                              onChange={handleChange}
@@ -73,7 +73,7 @@ export default function BeritaPage() {
                                              className="border border-[2px] border-blue-500 w-full h-[40px] rounded-[20px] pl-5 text-[#0369A1] pr-4"
                                         />
                                         {searchText.length === 0 && (
-                                             <div className="absolute ml-[450px]">
+                                             <div className="absolute md:ml-[450px] ml-[260px]">
                                                   <SearchIcon size={27} />
                                              </div>
                                         )}
@@ -82,22 +82,22 @@ export default function BeritaPage() {
                               </div>
                          </div>
                          <div className="font-bold text-[20px]">Daftar Berita</div>
-                         <div className="flex justify-between mt-4">
+                         <div className="flex flex-wrap justify-between mt-4">
                               <div className="grid grid-cols-1  ">
 
                                    {filteredBerita.map((item, index) =>
                                         <Link to={`/berita-detail/${item.id}`}>
-                                             <div className="bg-white shadow w-[499px] mt-2">
+                                             <div className="bg-white shadow md:w-[499px] mt-2">
                                                   <div className="flex p-2">
                                                   {item.cover && typeof item.cover === 'string' && (
                                                     item.cover.endsWith('.jpg') || item.cover.endsWith('.png') || item.cover.endsWith('.jpeg') ? (
-                                                        <img src={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} alt="Cover Berita" className="w-[200px] h-full" />
+                                                        <img src={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} alt="Cover Berita" className="md:w-[200px] w-[100px]  md:h-[100px]" />
                                                     ) : (
                                                         <a href={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} target="_blank" rel="noopener noreferrer">{item.cover}</a>
                                                     )
                                                 )}   
                                                        <div className="ml-2">
-                                                            <div className="text-[18px] font-medium text-black">{item.judul_berita}</div>
+                                                            <div className="md:text-[14px] font-bold text-black">{item.judul_berita}</div>
                                                             <div className="flex items-center">
                                                                  <CalenderICon size={28} />
                                                                  <div className="text-12"> {new Date(item.tgl_publikasi).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' })}</div>
@@ -112,15 +112,15 @@ export default function BeritaPage() {
                                    )}
 
                               </div>
-                              <div className="bg-[#0369A1] bg-opacity-20 w-[530px] rounded-[5px]">
+                              <div className="bg-[#0369A1] bg-opacity-20 md:w-[530px] rounded-[5px] mt-4">
                                    <div className="bg-[#E9871D] text-white text-center text-[20px] p-3 rounded-tr-[5px] rounded-tl-[5px]  ">Pengumuman Desa</div>
                                    {pengumuman.map((item, index) =>
-                                        <div className="bg-[#ffffff] shadow w-[459px] mt-4 text-black m-3" > {/*card*/}
+                                        <div className="bg-[#ffffff] shadow md:w-[459px] mt-4 text-black m-3" > {/*card*/}
                                              <div className="p-2">
 
                                                   <Link to={`/pengumuman-detail/${item.id}`}>
                                                        <div className="ml-2">
-                                                            <div className="text-[18px] font-medium text-black">{item.judul_pengumuman}</div>
+                                                            <div className="md:text-[18px] font-medium text-black">{item.judul_pengumuman}</div>
                                                             <div className="flex items-center">
                                                                  <CalenderICon size={28} />
                                                                  <div className="text-12">{new Date(item.tgl_publikasi).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' })} </div>

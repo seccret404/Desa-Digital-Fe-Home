@@ -34,26 +34,26 @@ export default function ProfilPage() {
     return (
         <div className="bg-[#F8F2F2]">
             <Layout>
-                <div className="bg-white ml-[56px] mr-[56px] rounded-[10px]">
-                    <div className="ml-[80px] mr-[90px] pt-10 mt-4 pb-10 mb-4 ">
-                        <div className="flex justify-between">
+                <div className="bg-white md:ml-[56px] md:mr-[56px] m-2 rounded-[10px]">
+                    <div className="m-2 md:ml-[80px] md:mr-[90px] pt-10 mt-4 pb-10 mb-4 ">
+                        <div className="flex flex-wrap justify-between">
                             <div>
-                                <div className="text-[20px] font-bold">{profil.nama_desa}</div>
+                                <div className="text-[20px] font-bold">Desa {profil.nama_desa}</div>
                                 <div className="flex items-center mt-2">
                                     <MapIcon size={24} />
                                     <div className="ml-4">
                                         {profil.alamat_kantor}
                                     </div>
                                 </div>
-                                <div className="mt-8">
+                                <div className="mt-8 md:block hidden">
                                     <Button bgColor="#E9871D" width={300} height={45} rounded={5} color="white">
                                         Struktur Pemerintahan Desa
                                     </Button>
                                 </div>
                             </div>
-                            <div>
+                            <div className="flex justify-center items-center">
                                 {profil.gambar_desa && typeof profil.gambar_desa === 'string' && (
-                                    <img src={`https://desa-api.desajanggadolok.id/api/gambardesa//${profil.gambar_desa}`} alt="Desa" className="w-full h-auto rounded" />
+                                    <img src={`https://desa-api.desajanggadolok.id/api/gambardesa//${profil.gambar_desa}`} alt="Desa" className="w-full h-auto rounded mt-3" />
                                 )}
                             </div>
                         </div>
@@ -98,20 +98,20 @@ export default function ProfilPage() {
                             </div>
                             <div className="flex justify-center mt-8">
                                <div className="border p-2 ">
-                              <div className="flex justify-between w-[600px] border p-2">
-                                   <div className="w-[300px] text-[18px] font-bold">Batas Barat</div>
+                              <div className="flex justify-between w-[250px] md:w-[600px] border p-2">
+                                   <div className="md:w-[300px] text-[18px] font-bold">Batas Barat</div>
                                    <div className="font-medium">{profil.batas_barat}</div>
                               </div>
-                              <div className="flex justify-between w-[600px] border p-2">
-                                   <div className="w-[350px] text-[18px] font-bold">Batas Timur</div>
+                              <div className="flex justify-between w-[250px] md:w-[600px] border p-2">
+                                   <div className="md:w-[350px] text-[18px] font-bold">Batas Timur</div>
                                    <div className="font-medium">{profil.batas_timur}</div>
                               </div>
-                              <div className="flex justify-between w-[600px] border p-2">
-                                   <div className="w-[300px] text-[18px] font-bold">Batas Selatan</div>
+                              <div className="flex justify-between w-[250px] md:w-[600px] border p-2">
+                                   <div className="md:w-[300px] text-[18px] font-bold">Batas Selatan</div>
                                    <div className="font-medium">{profil.batas_selatan}</div>
                               </div>
-                              <div className="flex justify-between w-[600px] border p-2">
-                                   <div className="w-[300px] text-[18px] font-bold">Batas Utara</div>
+                              <div className="flex justify-between w-[250px]     md:w-[600px] border p-2">
+                                   <div className="md:w-[300px] text-[18px] font-bold">Batas Utara</div>
                                    <div className="font-medium">{profil.batas_utara}</div>
                               </div>
                             </div>

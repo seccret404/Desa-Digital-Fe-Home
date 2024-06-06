@@ -57,9 +57,9 @@ export default function Navbar() {
           <div className="">
                <div className="bg-gradient-to-r from-blue-600 to-blue-900 flex items-center justify-between  ">
                     <img src={logo} alt="unilah.jpg"
-                         width={130} height={74} className='p-4 md:mr-35 ml-[89px]' />
-                    <div className="text-[#FFD233] font-medium text-[24px]">Desa Sosor Dolok</div>
-                    <div className="mr-[89px]">
+                         width={130} height={74} className='p-4 md:mr-35 ml-[8px]' />
+                    <div className="text-[#FFD233] font-medium md:text-[24px] md:block hidden">Desa Sosor Dolok</div>
+                    <div className="md:mr-[89px] hidden md:block">
                          <div className='text-[18px] text-white font-semibold' >{dayName}, {day} {monthName} {year}</div>
                          <div className='text-white grid grid-cols-5 items-center'>
                               <div className="bg-white bg-opacity-40 text-white rounded-[5px] w-[35px] h-[31px] flex justify-center items-center">{hours < 10 ? '0' + hours : hours}</div>

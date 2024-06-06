@@ -81,17 +81,17 @@ const dataRealisasi = [
           <div className="bg-[#F8F2F2]">
                <Layout>
                     <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">Detail APBDes</div>
-                    <div className="bg-white p-4 rounded-[8px] ml-[56px] mr-[56px] mt-4">
+                    <div className="bg-white p-4 rounded-[8px] md:ml-[56px] md:mr-[56px] mt-4">
                          <div className="flex justify-center">
                               <div className="bg-gradient-to-r from-blue-600 to-blue-900 w-[200px] p-3 rounded-[5px] text-white text-center">
                                    APBDes {anggaran?.tahun_anggaran}
                               </div>
                          </div>
                          <div className="">
-                              <div className="bg-[#E9871D] w-[200px] rounded-[17px] mt-4 ml-[50px]">
+                              <div className="bg-[#E9871D] w-[200px] rounded-[17px] mt-4 md:ml-[50px]">
                                    <div className="text-white text-center p-2"> Data Diagram</div>
                               </div>
-                              <div className="flex justify-center">
+                              <div className="flex flex-wrap justify-center">
                                    <div className="">
                                         <div className="text-center">Rencana Anggaran</div>
                                        <PieChart width={400} height={250}>
@@ -136,7 +136,7 @@ const dataRealisasi = [
                               </div>
                               <div className="">
                                    
-                                   <div className="ml-[50px] mr-[50px] mt-4"  >
+                                   <div className="md:ml-[50px] md:mr-[50px] mt-4"  >
                                         <Tabs defaultValue="pendapatan" className="w-full">
                                              <TabsList className='bg-[#F7F6F6] w-full text-white flex justify-between p-4'>
                                                   <TabsTrigger className='bg-[#0369A1] w-[200px] rounded-[5px] p-2 hover:bg-white hover:text-black radix-state-active:bg-white radix-state-active:text-black' value="pendapatan">Pendapatan Desa</TabsTrigger>

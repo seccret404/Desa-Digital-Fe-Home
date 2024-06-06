@@ -51,10 +51,10 @@ export default function DusunPage() {
   return (
     <div className="bg-[#F8F2F2]">
       <Layout>
-        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">Data Dusun</div>
-        <div className="bg-white mt-4 mb-4 ml-[56px] mr-[56px] rounded-[10px] p-6">
+        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] md:ml-[56px] md:mr-[56px] m-2 mt-[27px]">Data Dusun</div>
+        <div className="bg-white mt-4 mb-4 md:ml-[56px] md:mr-[56px] m-2 rounded-[10px] p-6">
           <div className="font-bold text-center text-[20px]">Data Dusun {profil?.nama_desa} - {currentYear}</div>
-          <div className="grid grid-cols-4 gap-20 mt-4">
+          <div className="grid md:grid-cols-4 gap-20 mt-4">
             {dusun.map((item,index) =>
               <div className="bg-gradient-to-r from-blue-600 to-blue-900 flex flex-col justify-between shadow rounded-[5px]" key={index}>
                 <div className="text-center text-[20px] text-white font-bold p-4">{item.nama_dusun}</div>

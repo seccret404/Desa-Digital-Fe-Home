@@ -43,10 +43,10 @@ export default function DetailOrganisasi() {
      return (
           <div className="bg-[#F8F2F2]">
                <Layout>
-                    <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">Detail Organisasi</div>
-                    <div className="text-[24px] text-center font-bold ml-[150px] mr-[150px] ">Pemerintahan {profil?.nama_desa} Kecamatan {profil?.kecamatan} {profil?.kabupaten} Provinsi {profil?.provinsi}</div>
-                    <div className="bg-white ml-[56px] mr-[56px] mt-[27px] mt-[17px] p-[29px] rounded-[10px] mb-[20px]">
-                         <div className="flex justify-between items-center ml-[100px] mr-[100px] border-[#000000] border p-2">
+                    <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] md:ml-[56px] m-2 md:mr-[56px] mt-[27px]">Detail Organisasi</div>
+                    <div className="md:text-[24px] text-center font-bold md:ml-[150px] md:mr-[150px] ">Pemerintahan {profil?.nama_desa} Kecamatan {profil?.kecamatan} {profil?.kabupaten} Provinsi {profil?.provinsi}</div>
+                    <div className="bg-white md:ml-[56px] md:mr-[56px] mt-[27px] mt-[17px] p-[29px] rounded-[10px] mb-[20px]">
+                         <div className="flex flex-wrap justify-between items-center md:ml-[100px] md:mr-[100px] border-[#000000] border p-2">
                               <img src={`https://desa-api.desajanggadolok.id/images/organisasi/${organisasi?.logo_organisasi}`} alt="" className="w-[300px]" />
                               <div className="border-[2px] border-[#000000] p-4">
                                    <div className="flex border border-[#000000] p-2">
@@ -76,7 +76,7 @@ export default function DetailOrganisasi() {
 
                          <div className="font-bold mt-4">Struktur Organisasi</div>
                          <div className="flex items-center justify-center">
-                              <div className="grid grid-cols-4 gap-10">
+                              <div className="grid md:grid-cols-4 gap-10">
                                    <div className="bg-white shadow w-[205px] h-[270px] flex flex-col justify-between  items-center">
                                         <div className="mt-8">
                                              <KetuaIcon size={100}/>

@@ -44,21 +44,21 @@ export default function PekerjaanPage() {
   return (
     <div className="bg-[#F8F2F2]">
       <Layout>
-        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">
+        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] m-2 md:ml-[56px] md:mr-[56px] mt-[27px]">
           Statistik Penduduk - Pekerjaan
         </div>
-        <div className="bg-white p-4 rounded-[8px] ml-[56px] mr-[56px] mt-4">
+        <div className="bg-white p-4 rounded-[8px] md:ml-[56px] md:mr-[56px] m-2 mt-4">
           <div className="flex justify-center">
             <div className="bg-gradient-to-r from-blue-600 to-blue-900 w-[300px] p-3 rounded-[5px] text-white text-center">
               Data Statistik Pekerjaan Penduduk {profil?.nama_desa} - {currentYear}
             </div>
           </div>
-          <div className="flex justify-between ml-[100px] mr-[100px] mt-8">
+          <div className="flex flex-wrap justify-between md:ml-[100px] md:mr-[100px] m-2 mt-8">
             <div className="">
               <div className="bg-[#E9871D] w-[200px] rounded-[7px] mt-4 ml-[50px]">
                 <div className="text-white text-center p-2"> Data Diagram</div>
               </div>
-              <PieChart width={400} height={300} margin={{ top: 20, right: 0, left: -40, bottom: 5 }}>
+              <PieChart width={350} height={300} margin={{ top: 20, right: 0, left: -30, bottom: 5 }}>
                 <Pie
                   data={pieData}
                   cx={200}
@@ -73,7 +73,7 @@ export default function PekerjaanPage() {
                   ))}
                 </Pie>
                 <Tooltip />
-                <Legend layout="vertical" align="right" verticalAlign="top" wrapperStyle={{ marginLeft: 30 }} />
+                <Legend layout="vertical" align="right" verticalAlign="top" wrapperStyle={{ marginLeft: 10 }} />
               </PieChart>
             </div>
             <div className="">

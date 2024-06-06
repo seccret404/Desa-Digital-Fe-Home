@@ -44,16 +44,16 @@ export default function AgamaPage() {
   return (
     <div className="bg-[#F8F2F2]">
       <Layout>
-        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">
+        <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] md:ml-[56px] md:mr-[56px] m-2 mt-[27px]">
           Statistik Penduduk - Agama
         </div>
-        <div className="bg-white p-4 rounded-[8px] ml-[56px] mr-[56px] mt-4">
+        <div className="bg-white p-4 rounded-[8px] md:ml-[56px] md:mr-[56px] m-2 mt-4">
           <div className="flex justify-center">
             <div className="bg-gradient-to-r from-blue-600 to-blue-900 w-[300px] p-3 rounded-[5px] text-white text-center">
               Data Statistik Agama Penduduk {profil?.nama_desa} - {currentYear}
             </div>
           </div>
-          <div className="flex flex-col justify-center ml-[100px] mr-[100px] mt-8">
+          <div className="flex flex-col justify-center md:ml-[100px] md:mr-[100px] mt-8">
             <div className="flex flex-col items-center">
               <div className="bg-[#E9871D] w-[200px] rounded-[7px] mt-4 ">
                 <div className="text-white text-center p-2"> Data Diagram</div>
@@ -77,7 +77,7 @@ export default function AgamaPage() {
               </PieChart>
             </div>
             <div className="">
-              <div className="bg-[#0369A1] w-[200px] rounded-[7px] mt-4 mb-3 items-none">
+              <div className="bg-[#0369A1] md:w-[200px] rounded-[7px] mt-4 mb-3 items-none">
                 <div className="text-white text-center p-2"> Data Table</div>
               </div>
               <Table className='border border-2 border-[#525252]' style={{ borderRadius: '5px' }}>

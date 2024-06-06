@@ -71,10 +71,10 @@ export default function DetailBeritaPage() {
 
           <div className="bg-[#F8F2F2]">
                <Layout>
-                    <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">Detail Berita</div>
-                    <div className="bg-white mt-4 mb-4 ml-[56px] mr-[56px] rounded-[10px] p-6">
+                    <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] m-2 p-2 rounded-[5px] md:ml-[56px] md:mr-[56px] mt-[27px]">Detail Berita</div>
+                    <div className="bg-white mt-4 mb-4 md:ml-[56px] md:mr-[56px] m-2 rounded-[10px] p-6">
 
-                         <div className="flex justify-between mt-4">
+                         <div className="flex flex-wrap justify-between mt-4">
                               <div className="">
                                    <div className="text-[20px] font-bold">{berita.judul_berita}</div>
                                    <div className="flex beritas-center mt-2">
@@ -104,11 +104,11 @@ export default function DetailBeritaPage() {
 
 
                               </div>
-                              <div className="bg-[#0369A1] bg-opacity-20 w-[530px] rounded-[5px]">
-                                   <div className="bg-[#E9871D] text-white text-center text-[20px] p-3 rounded-tr-[5px] rounded-tl-[5px]  ">Agenda Desa</div>
+                              <div className="bg-[#0369A1] bg-opacity-20 md:w-[530px] rounded-[5px]">
+                                   <div className="bg-[#E9871D] text-white text-center text-[20px] p-3 rounded-tr-[5px] rounded-tl-[5px] mt-2  ">Agenda Desa</div>
                                    {agenda.map((item, index) =>
                                         <Link to={`/agenda-detail/${item.id}`}>
-                                             <div className="bg-[#ffffff] shadow w-[459px] mt-4 text-black m-3" > {/*card*/}
+                                             <div className="bg-[#ffffff] shadow md:w-[459px] mt-4 text-black m-3" > {/*card*/}
                                                   <div className="p-2">
                                                        <div className="ml-2">
                                                             <div className="text-[18px] font-medium text-black">{item.nama_kegiatan}</div>

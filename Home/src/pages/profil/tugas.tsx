@@ -52,15 +52,15 @@ export default function TugasPage() {
     return (
         <div className="bg-[#F8F2F2]">
             <Layout>
-                <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] ml-[56px] mr-[56px] mt-[27px]">
+                <div className="bg-gradient-to-r from-orange-500 to-orange-900 text-white text-[20px] p-2 rounded-[5px] md:ml-[56px] md:mr-[56px] m-4 mt-[27px]">
                     Struktur Pemerintahan
                 </div>
-                <div className="text-center font-bold text-[24px] flex justify-center">
-                    <div className="w-[600px]">
+                <div className="text-center font-bold md:text-[24px] flex justify-center">
+                    <div className="md:w-[600px] w-[310px]">
                         Tugas, Wewenang, dan Fungsi Pemerintahan {profil?.nama_desa}
                     </div>
                 </div>
-                <div className="bg-[#ffffff] p-4 ml-[50px] mr-[50px] rounded-[10px]">
+                <div className="bg-[#ffffff] p-4 md:ml-[50px] md:mr-[50px] m-4 rounded-[10px]">
                     
                     <select
                         className="bg-[#E9871D] w-[200px] rounded-[17px] ml-[px] text-white  p-2 "

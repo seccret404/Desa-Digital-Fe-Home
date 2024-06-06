@@ -33,19 +33,19 @@ export default function OrganisasiPage() {
      return (
           <div className="bg-[#F8F2F2]">
                <Layout>
-                    <div className="bg-white mt-4 mb-4 ml-[56px] mr-[56px] rounded-[10px] p-6">
+                    <div className="bg-white mt-4 mb-4 md:ml-[56px] md:mr-[56px] m-2 rounded-[10px] p-6">
                          <div className="flex justify-center">
                               <div className="items-center  ">
                                    <div className="text-[#0369A1] text-[22px] font-medium tracking-[5px] text-center">Organisasi Desa</div>
-                                   <div className="w-[500px] flex mt-2 items-center">
-                                        <input
+                                   <div className="md:w-[500px] w-[300px] flex mt-2 items-center">
+                                   <input
                                              value={searchText}
                                              onChange={handleChange}
                                              type="search"
                                              className="border border-[2px] border-blue-500 w-full h-[40px] rounded-[20px] pl-5 text-[#0369A1] pr-4"
                                         />
                                         {searchText.length === 0 && (
-                                             <div className="absolute ml-[450px]">
+                                             <div className="absolute md:ml-[450px] ml-[260px]">
                                                   <SearchIcon size={27} />
                                              </div>
                                         )}
@@ -54,8 +54,8 @@ export default function OrganisasiPage() {
                               </div>
                          </div>
                          <div className="font-bold text-[20px]">Daftar Organisasi</div>
-                         <div className="flex justify-between mt-4">
-                              <div className="grid grid-cols-3 gap-5 mr-[50px]">
+                         <div className="grid md:grid-cols-2  grid-cols-1 md:justify-between  mt-4">
+                              <div className="grid md:grid-cols-3 grid-cols-1 gap-5 mr-[50px]">
                                    {filteredOrganisasi.map((item,index) =>
                                     <Link to={`/organisasi-detail/${item.id}`}>
                                 <div className="bg-[#0369A1] text-white flex flex-col shadow-lg ">
@@ -73,9 +73,9 @@ export default function OrganisasiPage() {
                                 </Link>
                                    )}
                               </div>
-                              <div className="bg-[#0369A1] bg-opacity-20 w-[530px] rounded-[5px]">
+                              <div className="bg-[#0369A1] bg-opacity-20 md:w-[530px] rounded-[5px] mt-4">
                                    <div className="bg-[#E9871D] text-white text-center text-[20px] p-3 rounded-tr-[5px] rounded-tl-[5px]  ">Berita Desa</div>
-                                   <div className="bg-[#ffffff] shadow w-[459px] mt-8 text-black m-3" > {/*card*/}
+                                   <div className="bg-[#ffffff] shadow md:w-[459px] mt-8 text-black m-3" > {/*card*/}
                                         <div className="p-2">
                                              <div className="ml-2">
                                                   <div className="text-[18px] font-medium text-black">Penyerahan Penerima Banuan Sosial</div>
