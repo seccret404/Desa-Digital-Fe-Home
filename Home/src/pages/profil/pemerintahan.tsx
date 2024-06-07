@@ -85,7 +85,7 @@ export default function PemerintahanPage() {
                               {kepdes.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                         <div className="mt-3">
-                                             <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                                             <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                                         </div>
                                         <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                                         <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Kepala Desa</div>
@@ -94,7 +94,7 @@ export default function PemerintahanPage() {
                               {sekdes.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                         <div className="mt-3">
-                                             <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                                             <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                                         </div>
                                         <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                                         <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Sekretaris Desa</div>
@@ -103,7 +103,7 @@ export default function PemerintahanPage() {
                               {bendahara.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                         <div className="mt-3">
-                                             <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                                             <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                                         </div>
                                         <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                                         <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Bendahara Desa</div>
@@ -112,7 +112,7 @@ export default function PemerintahanPage() {
                               {bpd.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                         <div className="mt-3">
-                                             <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                                             <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                                         </div>
                                         <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                                         <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Ketua BPD</div>
@@ -128,7 +128,7 @@ export default function PemerintahanPage() {
                               {pembangunan.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                         <div className="mt-3">
-                                             <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                                             <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                                         </div>
                                         <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                                         <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Kaur Umum dan Perencanaan</div>
@@ -138,7 +138,7 @@ export default function PemerintahanPage() {
                               {keuangan.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                          <div className="mt-3">
-                                             <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                                             <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                                         </div>
                                         <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                                         <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Kaur Keuangan</div>
@@ -147,7 +147,7 @@ export default function PemerintahanPage() {
                               {kup.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                          <div className="mt-3">
-                                             <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                                             <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                                         </div>
                                         <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                                         <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Kaur Pembangunan</div>
@@ -156,7 +156,7 @@ export default function PemerintahanPage() {
                               {pemerintahan.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                         <div className="mt-3">
-                                             <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                                             <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                                         </div>
                                         <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                                         <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Kaur Pemerintahan</div>
@@ -167,7 +167,7 @@ export default function PemerintahanPage() {
                               {kesejahteraan.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                          <div className="mt-3">
-                                             <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                                             <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                                         </div>
                                         <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                                         <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Kaur Kesejahteraan Rakyat</div>
@@ -176,7 +176,7 @@ export default function PemerintahanPage() {
                               {pemberdayaan.map((item, index) => (
                                    <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                                          <div className="mt-3">
-                                             <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                                             <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                                         </div>
                                         <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                                         <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Kaur Pemberdayaan Masyarakat</div>

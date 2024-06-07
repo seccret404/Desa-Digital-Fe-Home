@@ -91,9 +91,9 @@ export default function BeritaPage() {
                                                   <div className="flex p-2">
                                                   {item.cover && typeof item.cover === 'string' && (
                                                     item.cover.endsWith('.jpg') || item.cover.endsWith('.png') || item.cover.endsWith('.jpeg') ? (
-                                                        <img src={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} alt="Cover Berita" className="md:w-[200px] w-[100px]  md:h-[100px]" />
+                                                        <img src={`https://api-admin.desasosordolok.id/images/cover/${item.cover}`} alt="Cover Berita" className="md:w-[200px] w-[100px]  md:h-[100px]" />
                                                     ) : (
-                                                        <a href={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} target="_blank" rel="noopener noreferrer">{item.cover}</a>
+                                                        <a href={`https://api-admin.desasosordolok.id/images/cover/${item.cover}`} target="_blank" rel="noopener noreferrer">{item.cover}</a>
                                                     )
                                                 )}   
                                                        <div className="ml-2">

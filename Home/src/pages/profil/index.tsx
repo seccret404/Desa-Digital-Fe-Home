@@ -53,7 +53,7 @@ export default function ProfilPage() {
                             </div>
                             <div className="flex justify-center items-center">
                                 {profil.gambar_desa && typeof profil.gambar_desa === 'string' && (
-                                    <img src={`https://desa-api.desajanggadolok.id/api/gambardesa//${profil.gambar_desa}`} alt="Desa" className="w-full h-auto rounded mt-3" />
+                                    <img src={`https://api-admin.desasosordolok.id/api/gambardesa//${profil.gambar_desa}`} alt="Desa" className="w-full h-auto rounded mt-3" />
                                 )}
                             </div>
                         </div>

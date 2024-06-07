@@ -183,7 +183,7 @@ export default function Home() {
                 <Slider {...settings}>
                   {berita.map((item, index) => (
                     <div key={index} className="pl-4 pr-4">
-                      <img src={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} alt={item.judul_berita} className="w-full h-[200px]" height={300} />
+                      <img src={`https://api-admin.desasosordolok.id/images/cover/${item.cover}`} alt={item.judul_berita} className="w-full h-[200px]" height={300} />
                       <div className="text-center bg-[#0369A1] text-white p-1 ">
                         {limitTextToPengumuman(item.judul_berita)}
                       </div>
@@ -214,7 +214,7 @@ export default function Home() {
                 {kepdes.map((item, index) => (
                   <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                     <div className="mt-3">
-                      <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                      <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                     </div>
                     <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                     <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Kepala Desa</div>
@@ -223,7 +223,7 @@ export default function Home() {
                 {sekdes.map((item, index) => (
                   <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                     <div className="mt-3">
-                      <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                      <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                     </div>
                     <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                     <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Sekretaris Desa</div>
@@ -232,7 +232,7 @@ export default function Home() {
                 {bendahara.map((item, index) => (
                   <div key={index} className="bg-white shadow w-[205px] h-[307px] flex flex-col items-center">
                     <div className="mt-3">
-                      <img src={`https://desa-api.desajanggadolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
+                      <img src={`https://api-admin.desasosordolok.id/images/pemerintah/${item.profil}`} alt={item.nama} className="rounded-[10px] h-[200px]" />
                     </div>
                     <div className="text-[18px] font-medium mt-[16px]">{item.nama}</div>
                     <div className="bg-[#0369A1] text-white w-full text-center text-[14px] pt-1 pb-1">Bendahara Desa</div>
@@ -321,9 +321,9 @@ export default function Home() {
                         <div className="">
                           {item.cover && typeof item.cover === 'string' && (
                             item.cover.endsWith('.jpg') || item.cover.endsWith('.png') || item.cover.endsWith('.jpeg') ? (
-                              <img src={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} alt="Cover Berita" className="md:w-[200px]  md:h-[100px] w-[200px] h-[100px]" />
+                              <img src={`https://api-admin.desasosordolok.id/images/cover/${item.cover}`} alt="Cover Berita" className="md:w-[200px]  md:h-[100px] w-[200px] h-[100px]" />
                             ) : (
-                              <a href={`https://desa-api.desajanggadolok.id/images/cover/${item.cover}`} target="_blank" rel="noopener noreferrer">{item.cover}</a>
+                              <a href={`https://api-admin.desasosordolok.id/images/cover/${item.cover}`} target="_blank" rel="noopener noreferrer">{item.cover}</a>
                             )
                           )}
                         </div>
@@ -352,9 +352,9 @@ export default function Home() {
                         <div className="">
                           {item.file_pengumuman && typeof item.file_pengumuman === 'string' && (
                             item.file_pengumuman.endsWith('.jpg') || item.file_pengumuman.endsWith('.png') || item.file_pengumuman.endsWith('.jpeg') ? (
-                              <img src={`https://desa-api.desajanggadolok.id/api/pengumuman_cover/${item.file_pengumuman}`} alt="Cover Pengumuman" className="md:w-[150px] md:h-[100px] w-[150px] h-[100px]" />
+                              <img src={`https://api-admin.desasosordolok.id/api/pengumuman_cover/${item.file_pengumuman}`} alt="Cover Pengumuman" className="md:w-[150px] md:h-[100px] w-[150px] h-[100px]" />
                             ) : (
-                              <a href={`https://desa-api.desajanggadolok.id/api/pengumuman_cover/${item.file_pengumuman}`} target="_blank" rel="noopener noreferrer">{item.file_pengumuman}</a>
+                              <a href={`https://api-admin.desasosordolok.id/api/pengumuman_cover/${item.file_pengumuman}`} target="_blank" rel="noopener noreferrer">{item.file_pengumuman}</a>
                             )
                           )}
                         </div>

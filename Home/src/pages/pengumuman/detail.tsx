@@ -81,9 +81,9 @@ export default function DetailPengumumanPage() {
               <div className="m-2">
                 {pengumuman.file_pengumuman && typeof pengumuman.file_pengumuman === 'string' && (
                   pengumuman.file_pengumuman.endsWith('.jpg') || pengumuman.file_pengumuman.endsWith('.png') || pengumuman.file_pengumuman.endsWith('.jpeg') ? (
-                    <img src={`https://desa-api.desajanggadolok.id/api/pengumuman_cover/${pengumuman.file_pengumuman}`} alt="Cover Pengumuman" className="w-full h-auto" />
+                    <img src={`https://api-admin.desasosordolok.id/api/pengumuman_cover/${pengumuman.file_pengumuman}`} alt="Cover Pengumuman" className="w-full h-auto" />
                   ) : (
-                    <a href={`https://desa-api.desajanggadolok.id/api/pengumuman_cover/${pengumuman.file_pengumuman}`} target="_blank" rel="noopener noreferrer">{pengumuman.file_pengumuman}</a>
+                    <a href={`https://api-admin.desasosordolok.id/api/pengumuman_cover/${pengumuman.file_pengumuman}`} target="_blank" rel="noopener noreferrer">{pengumuman.file_pengumuman}</a>
                   )
                 )}
               </div>
@@ -92,11 +92,11 @@ export default function DetailPengumumanPage() {
               <div className="m-2">
               {pengumuman.cover_pengumuman && typeof pengumuman.cover_pengumuman === 'string' && (
                 pengumuman.cover_pengumuman.endsWith('.jpg') || pengumuman.cover_pengumuman.endsWith('.png') || pengumuman.cover_pengumuman.endsWith('.jpeg') ? (
-                  <img src={`https://desa-api.desajanggadolok.id/api/pengumuman_file/${pengumuman.cover_pengumuman}`} alt="Cover Pengumuman" className="w-full h-auto" />
+                  <img src={`https://api-admin.desasosordolok.id/api/pengumuman_file/${pengumuman.cover_pengumuman}`} alt="Cover Pengumuman" className="w-full h-auto" />
                 ) : pengumuman.cover_pengumuman.endsWith('.pdf') ? (
-                  <a href={`https://desa-api.desajanggadolok.id/api/pengumuman_file/${pengumuman.cover_pengumuman}`} target="_blank" rel="noopener noreferrer" className="bg-[#D40F0F] p-2 rounded-[5px] text-[white]">Download PDF</a>
+                  <a href={`https://api-admin.desasosordolok.id/api/pengumuman_file/${pengumuman.cover_pengumuman}`} target="_blank" rel="noopener noreferrer" className="bg-[#D40F0F] p-2 rounded-[5px] text-[white]">Download PDF</a>
                 ) : (
-                  <a href={`https://desa-api.desajanggadolok.id/api/pengumuman_file/${pengumuman.cover_pengumuman}`} target="_blank" rel="noopener noreferrer">{pengumuman.cover_pengumuman}</a>
+                  <a href={`https://api-admin.desasosordolok.id/api/pengumuman_file/${pengumuman.cover_pengumuman}`} target="_blank" rel="noopener noreferrer">{pengumuman.cover_pengumuman}</a>
                 )
               )}
             </div>

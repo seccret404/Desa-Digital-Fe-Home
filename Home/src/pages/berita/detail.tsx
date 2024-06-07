@@ -84,9 +84,9 @@ export default function DetailBeritaPage() {
                                    <div className="m-2">
                                         {berita.cover && typeof berita.cover === 'string' && (
                                              berita.cover.endsWith('.jpg') || berita.cover.endsWith('.png') || berita.cover.endsWith('.jpeg') ? (
-                                                  <img src={`https://desa-api.desajanggadolok.id/images/cover/${berita.cover}`} alt="Cover Berita" className="w-full h-auto " />
+                                                  <img src={`https://api-admin.desasosordolok.id/images/cover/${berita.cover}`} alt="Cover Berita" className="w-full h-auto " />
                                              ) : (
-                                                  <a href={`https://desa-api.desajanggadolok.id/images/cover/${berita.cover}`} target="_blank" rel="noopener noreferrer">{berita.cover}</a>
+                                                  <a href={`https://api-admin.desasosordolok.id/images/cover/${berita.cover}`} target="_blank" rel="noopener noreferrer">{berita.cover}</a>
                                              )
                                         )}
                                    </div>
@@ -95,9 +95,9 @@ export default function DetailBeritaPage() {
                                    <div className="m-2">
                                         {berita.file && typeof berita.file === 'string' && (
                                              berita.file.endsWith('.jpg') || berita.file.endsWith('.png') || berita.file.endsWith('.jpeg') ? (
-                                                  <img src={`https://desa-api.desajanggadolok.id/images/file/${berita.file}`} alt="file Berita" className="w-full h-auto " />
+                                                  <img src={`https://api-admin.desasosordolok.id/images/file/${berita.file}`} alt="file Berita" className="w-full h-auto " />
                                              ) : (
-                                                  <a href={`https://desa-api.desajanggadolok.id/images/file/${berita.file}`} download target="_blank" rel="noopener noreferrer" className="bg-[#D40F0F] p-2 rounded-[5px] text-[white]">Download PDF</a>
+                                                  <a href={`https://api-admin.desasosordolok.id/images/file/${berita.file}`} download target="_blank" rel="noopener noreferrer" className="bg-[#D40F0F] p-2 rounded-[5px] text-[white]">Download PDF</a>
                                              )
                                         )}
                                    </div>

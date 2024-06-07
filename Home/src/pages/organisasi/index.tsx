@@ -59,7 +59,7 @@ export default function OrganisasiPage() {
                                    {filteredOrganisasi.map((item,index) =>
                                     <Link to={`/organisasi-detail/${item.id}`}>
                                 <div className="bg-[#0369A1] text-white flex flex-col shadow-lg ">
-                                        <div className="flex justify-center"><img src={`https://desa-api.desajanggadolok.id/images/organisasi/${item.logo_organisasi}`} className="w-full h-[180px]" alt="" /></div>
+                                        <div className="flex justify-center"><img src={`https://api-admin.desasosordolok.id/images/organisasi/${item.logo_organisasi}`} className="w-full h-[180px]" alt="" /></div>
                                         <div className="text-center p-10">{item.nama_lembaga}</div>
                                         <div className="flex justify-between">
                                              <div className="bg-white w-[25px]"></div>

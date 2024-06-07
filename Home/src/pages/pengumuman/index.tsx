@@ -99,9 +99,9 @@ export default function PengumumanPage() {
                                                   <div className="flex p-2">
                                                   {item.file_pengumuman && typeof item.file_pengumuman === 'string' && (
                                                     item.file_pengumuman.endsWith('.jpg') || item.file_pengumuman.endsWith('.png') || item.file_pengumuman.endsWith('.jpeg') ? (
-                                                        <img src={`https://desa-api.desajanggadolok.id/api/pengumuman_cover/${item.file_pengumuman}`} alt="Cover Pengumuman" className="md:w-[200px] w-[100px]  h-full" />
+                                                        <img src={`https://api-admin.desasosordolok.id/api/pengumuman_cover/${item.file_pengumuman}`} alt="Cover Pengumuman" className="md:w-[200px] w-[100px]  h-full" />
                                                     ) : (
-                                                        <a href={`https://desa-api.desajanggadolok.id/api/pengumuman_cover/${item.file_pengumuman}`} target="_blank" rel="noopener noreferrer">{item.file_pengumuman}</a>
+                                                        <a href={`https://api-admin.desasosordolok.id/api/pengumuman_cover/${item.file_pengumuman}`} target="_blank" rel="noopener noreferrer">{item.file_pengumuman}</a>
                                                     )
                                                 )}
                                                        <div className="ml-2">

@@ -14,7 +14,7 @@ import { Profil } from '../interfaces/profil';
 
 // const API_URL = 'https://desa-digital-bakend-jf9ckkwwo-seccret404s-projects.vercel.app/api';
 // const API_URL = 'http://localhost:3000/api';
-const API_URL = 'https://desa-api.desajanggadolok.id/api';
+const API_URL = 'https://api-admin.desasosordolok.id/api';
 
 
 
